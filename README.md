@@ -3,9 +3,13 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/slyrhtml/sysvia-release/releases/latest"><b>Download for Windows</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.0.0</b></a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
+&nbsp;·&nbsp;
+<a href="#updating-from-1x">Updating from 1.x</a>
+&nbsp;·&nbsp;
+<a href="#whats-new-in-20">What's new</a>
 &nbsp;·&nbsp;
 <a href="#set-up-a-desk">Set up a desk</a>
 &nbsp;·&nbsp;
@@ -24,13 +28,21 @@
 <img src="media/lan.webp" alt="LAN-first privacy. Devices discover each other on your local network and traffic is TLS-encrypted." width="49%" align="top">
 </p>
 
+Sysvia keeps folders in sync between your computers and lets one keyboard and mouse control several of them. Nothing goes through a cloud service. Computers find each other on your network and talk directly.
+
 ## Install
 
-Download the installer for your computer from the [latest release](https://github.com/slyrhtml/sysvia-release/releases/latest). A Linux installer is not available yet.
+Download the installer for your computer from the [latest release](https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest). A Linux installer is not available yet.
 
-**Windows (x64).** Run `Sysvia-1.0.1-win-x64.exe`. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
+| Computer | File |
+| --- | --- |
+| Windows (x64) | `Sysvia-2.0.0-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.0.0-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.0.0-mac-x64.dmg` |
 
-**macOS.** Open the `.dmg` from the release and drag Sysvia into Applications. On first launch macOS asks for Local Network access, and keyboard and mouse sharing needs the permissions listed under [macOS permissions](#macos-permissions).
+**Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
+
+**macOS.** Open the `.dmg` and drag Sysvia into Applications. The app is signed and notarized by Apple. On first launch macOS asks for Local Network access, and keyboard and mouse sharing needs the permissions listed under [macOS permissions](#macos-permissions). Not sure which Mac you have? Apple menu, then About This Mac: "Chip" says Apple M1 or similar, "Processor" says Intel.
 
 The app checks this repository for updates shortly after launch and every few hours.
 
@@ -43,15 +55,38 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-1.0.1-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.0.0-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-1.0.1-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.0.0-*.dmg
 ```
 
 </details>
+
+## Updating from 1.x
+
+Version 2.0 replaces the file sync engine, and 2.0 computers cannot sync with 1.x computers. So update all of them, and then pair them again.
+
+1. Install 2.0.0 on every computer. The app will offer the update, or you can download it above. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. The first time 2.0 opens, it reads the folders from your existing Syncthing setup and adds them. Your old Syncthing files are only read, never changed.
+3. Open **Computers** on each computer and pair them again. Computers have new IDs in 2.0, so the old pairings do not carry over.
+4. Once paired, the folders connect by the names they already had. If both sides already hold the same files, nothing is sent again. Sysvia just compares them and carries on.
+
+If a computer shows up twice in your list, remove the entry that never connects. That is the old one.
+
+## What's new in 2.0
+
+**A sync engine written for Sysvia.** Syncthing is no longer part of the app. File sync now runs on Sysvia's own engine, so the installer no longer ships any Syncthing files. On many small files it is much faster. In our tests, with two copies running on one Mac, a first sync of 3,000 small files took about 1.6 seconds. The old engine took about 15. Large files take about the same time as before.
+
+**Built to survive a power cut.** The computer's identity and settings are written to disk in a way that survives losing power, with a backup copy next to each, so a computer keeps its ID and does not turn up as a second computer afterwards. If the index of your files is damaged, Sysvia sets it aside and rebuilds it from your folders instead of downloading everything again. A transfer that was interrupted picks up from the blocks it already had.
+
+**Undo for receive-only folders.** A folder set to receive changes only never sends what you change on that computer. If you have edited or added things there and want it back to how the others have it, open the folder and choose **Revert local changes**. What you had is moved to the folder's trash first, not deleted.
+
+**Removed files can be restored.** When another computer deletes or replaces a file, the old copy is kept for 7 days in `.sysvia/trash` inside the folder. A new **Recently removed files** list on the folder page shows them, with a **Restore** button on each. If the file's old place is taken, it comes back next to it as `name (restored)` and nothing is overwritten.
+
+**Each account has its own computers and folders.** If several people sign in to Sysvia on one computer, one account no longer sees another account's computers and folders. The first account to sign in after updating keeps the existing setup. Other accounts start with their own, which also means their own ID when pairing.
 
 ## Set up a desk
 
@@ -66,7 +101,7 @@ Install and open Sysvia on each computer. Then:
 > [!NOTE]
 > Both computers must be open and on the same subnet. A desktop on Ethernet and a laptop on a different Wi-Fi range will not see each other.
 
-Keyboard sharing is optional. Leaving it off does not stop folder sync, and folders can also reach each other beyond the LAN through discovery and relays. The desk cannot.
+Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. Sysvia has no relay servers.
 
 ### Shortcuts
 
@@ -89,7 +124,8 @@ Keyboard sharing is optional. Leaving it off does not stop folder sync, and fold
 ## Current limits
 
 - No Linux installer yet.
-- For a folder that already exists, ignore patterns, versioning, pause and delete are not editable yet.
+- For a folder that already exists, ignore patterns and versioning are not editable yet.
+- Folder sync needs the computers to reach each other, on the same network or directly. There are no relay servers.
 - The clipboard carries text only. Images, files, and dragging a file across the desk are not supported. Share a folder instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
 - The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted, but the window does not show that key for approval yet. Folder transfers use device certificates.
@@ -104,7 +140,7 @@ Keyboard sharing is optional. Leaving it off does not stop folder sync, and fold
 | Port | Used for | Notes |
 | --- | --- | --- |
 | 22000 | Folder data | |
-| 21027 UDP | Folder discovery on the LAN | |
+| 21037 UDP | Folder discovery on the LAN | |
 | 8384 | Folder sync local API | `127.0.0.1` only. Do not publish it. |
 | 24810 | Desk session | |
 | 24811 | Window control | `127.0.0.1` only. |
@@ -129,7 +165,9 @@ Desk config, peers, role and layout live in `config.json`:
 
 Stop Sysvia before editing it. The daemon rewrites the file.
 
-Folder sync keeps its own keys and index separately. On Windows that is `%LOCALAPPDATA%\Syncthing`. Deleting it creates a new Device ID, and other computers have to be paired again.
+Folder sync keeps its own keys, settings and index in a `sync-engine` folder in the same place. Deleting it creates a new Device ID, and other computers have to be paired again. Accounts after the first keep theirs under `sync-engine-accounts`.
+
+Files that sync removes are kept in a `.sysvia/trash` folder inside each synced folder. That folder is never synced.
 
 </details>
 
@@ -138,6 +176,6 @@ Folder sync keeps its own keys and index separately. On Windows that is `%LOCALA
 
 <br>
 
-Folder sync is built on [Syncthing](https://syncthing.net), which is licensed under MPL-2.0. The license text ships with the installer at `resources\licenses\Syncthing-LICENSE`. The desk daemon is MIT. Chart.js is MIT. Interface icons are [Lucide](https://lucide.dev), ISC. Syncthing is a project of its own authors and is not affiliated with Sysvia.
+The folder sync engine and the desk daemon are MIT. Interface icons are [Lucide](https://lucide.dev), ISC.
 
 </details>
