@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.0.0</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.0.1</b></a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
 <a href="#updating-from-1x">Updating from 1.x</a>
 &nbsp;·&nbsp;
-<a href="#whats-new-in-20">What's new</a>
+<a href="#whats-new">What's new</a>
 &nbsp;·&nbsp;
 <a href="#set-up-a-desk">Set up a desk</a>
 &nbsp;·&nbsp;
@@ -36,9 +36,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.0.0-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.0.0-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.0.0-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.0.1-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.0.1-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.0.1-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -55,28 +55,36 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.0.0-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.0.1-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.0.0-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.0.1-*.dmg
 ```
 
 </details>
 
-## Updating from 1.x
+## Updating
 
-Version 2.0 replaces the file sync engine, and 2.0 computers cannot sync with 1.x computers. So update all of them, and then pair them again.
+**From 2.0.0.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
 
-1. Install 2.0.0 on every computer. The app will offer the update, or you can download it above. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. The first time 2.0 opens, it reads the folders from your existing Syncthing setup and adds them. Your old Syncthing files are only read, never changed.
-3. Open **Computers** on each computer and pair them again. Computers have new IDs in 2.0, so the old pairings do not carry over.
-4. Once paired, the folders connect by the names they already had. If both sides already hold the same files, nothing is sent again. Sysvia just compares them and carries on.
+**From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-If a computer shows up twice in your list, remove the entry that never connects. That is the old one.
+1. Install 2.0.1 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Sysvia 2.0.1 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
+4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
-## What's new in 2.0
+If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
+
+## What's new
+
+### 2.0.1
+
+A cleanup release. The last pieces of the old Syncthing-based engine are gone, and file sync is named Sysvia Sync inside the app. Nothing changes in how you use Sysvia, and pairings made in 2.0.0 carry over. The one difference is for people updating from 1.x, who now add their folders again (see [Updating](#updating)).
+
+### 2.0
 
 **A sync engine written for Sysvia.** Syncthing is no longer part of the app. File sync now runs on Sysvia's own engine, so the installer no longer ships any Syncthing files. On many small files it is much faster. In our tests, with two copies running on one Mac, a first sync of 3,000 small files took about 1.6 seconds. The old engine took about 15. Large files take about the same time as before.
 
