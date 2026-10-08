@@ -11,13 +11,15 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.0.2</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.0</b></a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
 <a href="#how-it-works">How it works</a>
 &nbsp;·&nbsp;
 <a href="#notifications">Notifications</a>
+&nbsp;·&nbsp;
+<a href="#shortcuts-and-game-mode">Game mode</a>
 &nbsp;·&nbsp;
 <a href="#updating">Updating</a>
 &nbsp;·&nbsp;
@@ -47,6 +49,7 @@ Sysvia keeps folders in sync between your computers and lets one keyboard and mo
 | **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, and interrupted transfers that resume. |
 | **Desk** | One keyboard and mouse across several computers. Push the pointer off a screen edge and it lands on the next machine. |
 | **Clipboard** | Copy text on one computer, paste it on another. |
+| **Shortcuts and game mode** | Keys that work from anywhere on the computer, and a game mode that stops the keyboard and mouse from leaving it while you play. |
 | **Notifications** | Desktop alerts when a computer connects, files arrive, something fails, or an update is ready. |
 | **Private by design** | Your files and clipboard never pass through a server. No relay servers, no cloud storage. Traffic is TLS and tied to device identities. |
 
@@ -99,9 +102,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.0.2-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.0.2-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.0.2-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.1.0-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.0-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.1.0-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -118,12 +121,12 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.0.2-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.1.0-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.0.2-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.1.0-*.dmg
 ```
 
 </details>
@@ -158,18 +161,30 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 
 ## Updating
 
-**From 2.0.0 or 2.0.1.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
+**From 2.0.0, 2.0.1 or 2.0.2.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
 
 **From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-1. Install 2.0.2 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. Sysvia 2.0.2 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+1. Install 2.1.0 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Sysvia 2.1.0 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
 3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
 4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.1.0
+
+**Game mode.** One switch on the computer that is sharing its keyboard and mouse stops them from crossing to another computer, so the cursor stays put while you play. Turn it on from the **Desk** page or with a shortcut, and a **Game mode** badge in the header shows while it is on. It is always off when Sysvia starts. On Windows it also keeps the cursor on the monitor your game is running on, so it cannot drift onto a second screen where you cannot see it. See [Shortcuts and game mode](#shortcuts-and-game-mode).
+
+**Shortcuts you can change.** A new **Shortcuts** tab in Settings lets you choose the keys for game mode, for viewing another computer's screen, and for bringing Sysvia to the front. They work from anywhere on the computer, even with a game in front, and changes apply right away. Sysvia tells you when a combination is already taken.
+
+**On-screen confirmation.** A small message appears for a moment when a shortcut is used, even if Sysvia is minimized or a game is in front. It can be turned off in the Shortcuts tab.
+
+**Fixes.** Removing a folder now fades its row out, and pressing the remove button twice no longer sends the request twice. If the background service is older than the app, game mode now says so instead of failing without a word.
+
+Computers paired on 2.0.x stay paired. Nothing to redo.
 
 ### 2.0.2
 
@@ -210,12 +225,20 @@ Install and open Sysvia on each computer. Then:
 
 Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. Sysvia has no relay servers.
 
-### Shortcuts
+## Shortcuts and game mode
+
+These work from anywhere on the computer, even while a game or another app is in front.
 
 | Shortcut | What it does |
 | --- | --- |
-| `Ctrl+Alt+Esc` | Take the pointer back if it sticks on the other computer. On a Mac: `Control+Option+Esc`. |
+| `Ctrl+Alt+Esc` | Take the pointer back if it sticks on the other computer. On a Mac: `Control+Option+Esc`. Built in, so it always works, and it cannot be changed. |
+| `Ctrl+Alt+G` | Turn game mode on or off. On a Mac: `Control+Option+G`. |
 | `Ctrl+Alt+2` | Show the other computer's primary display on this monitor. Press it again or `Esc` to close. On a Mac: `Control+Option+2`. |
+| Not set | Bring the Sysvia window to the front. Choose your own keys for it. |
+
+Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
+
+**Game mode** is for the computer that is sharing its keyboard and mouse (the host). While it is on, the pointer no longer crosses to another computer and your input stays on this one. Turn it on from the **Desk** page or with `Ctrl+Alt+G`. It always starts off when Sysvia launches and turns itself off if you stop hosting. On Windows it also holds the cursor on the monitor your game is on. Taking the keyboard back with `Ctrl+Alt+Esc` releases it.
 
 <details>
 <summary id="macos-permissions">macOS permissions</summary>
@@ -236,6 +259,7 @@ Keyboard sharing is optional, and leaving it off does not stop folder sync. Fold
 - Folder sync needs the computers to reach each other, on the same network or directly. There are no relay servers.
 - The clipboard carries text only. Images, files, and dragging a file across the desk are not supported. Share a folder instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
+- Game mode keeps the cursor on one monitor on Windows only. On a Mac it only stops the pointer crossing to another computer.
 - Desktop notifications do not name which computer a file came from, and there are no quiet hours yet.
 - The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted, but the window does not show that key for approval yet. Folder transfers use device certificates.
 
@@ -278,7 +302,7 @@ Folder sync keeps its own keys, settings and index in a `sync-engine` folder in 
 
 Files that sync removes are kept in a `.sysvia/trash` folder inside each synced folder. That folder is never synced.
 
-Notification choices are kept in `notification-preferences.json` in the app's data folder.
+Notification choices are kept in `notification-preferences.json`, and shortcut choices in `shortcut-preferences.json`, in the app's data folder.
 
 </details>
 
