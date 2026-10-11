@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.0</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.2</b></a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
@@ -46,12 +46,12 @@ Sysvia keeps folders in sync between your computers and lets one keyboard and mo
 
 | | |
 | --- | --- |
-| **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, and interrupted transfers that resume. |
+| **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, interrupted transfers that resume, and renames that move at once. |
 | **Desk** | One keyboard and mouse across several computers. Push the pointer off a screen edge and it lands on the next machine. |
 | **Clipboard** | Copy text on one computer, paste it on another. |
 | **Shortcuts and game mode** | Keys that work from anywhere on the computer, and a game mode that stops the keyboard and mouse from leaving it while you play. |
 | **Notifications** | Desktop alerts when a computer connects, files arrive, something fails, or an update is ready. |
-| **Private by design** | Your files and clipboard never pass through a server. No relay servers, no cloud storage. Traffic is TLS and tied to device identities. |
+| **Private by design** | Your files and clipboard never pass through a server of ours. No cloud storage. If two computers cannot reach each other, they can use a relay you run yourself, and it cannot read what it carries. Traffic is TLS and tied to device identities. |
 
 ## How it works
 
@@ -102,9 +102,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.1.0-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.0-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.1.0-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.1.2-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.2-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.1.2-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -121,12 +121,12 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.1.0-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.1.2-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.1.0-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.1.2-*.dmg
 ```
 
 </details>
@@ -139,7 +139,7 @@ Sysvia can tell you about things while it sits in the tray, on Windows and macOS
 | --- | --- |
 | A computer connects | **Studio PC connected** |
 | A computer has been offline for more than 30 seconds, and again when it is back | **Studio PC went offline**, then **Studio PC is back online** |
-| Files arrive from another computer | **File synced**, or **Photos synced** with "12 files updated, 2 removed" |
+| Files arrive from another computer | **cover.psd from Studio PC in Photos**, or **From Studio PC: 3 files updated** |
 | A folder has a problem | **Photos needs attention**, or **Photos stopped syncing** |
 | An update is available | **Update available**, once for each new version |
 
@@ -149,11 +149,12 @@ Alerts are kept calm on purpose:
 - Files that arrive close together are grouped into one alert per folder instead of one per file.
 - A folder that keeps failing is reported once every few minutes, not on every retry.
 - Nothing is shown while the Sysvia window is in front of you. The app already shows it.
+- Only the big events play a sound: updates, errors, and a folder finishing a large sync (10 or more files, or a sync that took 20 seconds or longer). Connections and small syncs are silent.
 - Notifications cover files that arrive from your other computers, not changes you make on this one.
 
 Clicking an alert brings Sysvia forward and opens the page it was about: Computers for connections, Folders for syncs and problems.
 
-**Settings.** Open the bell at the top of the window, then the settings icon. **Desktop notifications** turns every alert off at once; **File syncs**, **Connections**, **Errors and alerts** and **Updates** switch each kind. Your choices are kept even when the window is closed to the tray. **Sound** applies to the in-app list only; desktop alerts follow your system's notification sound settings.
+**Settings.** Open the bell at the top of the window, then the settings icon. **Desktop notifications** turns every alert off at once; **File syncs**, **Connections**, **Errors and alerts** and **Updates** switch each kind. Your choices are kept even when the window is closed to the tray. **Sound** turns Sysvia's notification sound on or off. **Quiet hours** holds desktop alerts between two times you choose, across midnight if needed; the bell list still records them. **Send a test notification** shows a real alert and tells you why one did not appear: switched off, held by quiet hours, refused by the system, or hidden by Focus assist or Do Not Disturb.
 
 **macOS.** Allow notifications for Sysvia the first time macOS asks, or later under System Settings, Notifications, Sysvia. Focus modes and Do Not Disturb hide them, as with any app.
 
@@ -161,18 +162,42 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 
 ## Updating
 
-**From 2.0.0, 2.0.1 or 2.0.2.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
+**From 2.0.0 or later.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
 
 **From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-1. Install 2.1.0 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. Sysvia 2.1.0 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+1. Install 2.1.2 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Sysvia 2.1.2 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
 3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
 4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.1.2
+
+**Notifications you can tune.** Sync alerts now say which computer the change came from, such as "cover.psd from Studio PC in Photos". Only the big events play Sysvia's sound: updates, errors, and a folder finishing a large sync. Connections and small syncs are silent. A new **Quiet hours** setting holds desktop alerts between two times, and **Send a test notification** in the settings shows a real alert and tells you why one did not appear. See [Notifications](#notifications).
+
+**Renames and moves are instant.** Rename a large file or move a whole folder and the other computers move their copy too, without sending any data. If the file is open in another program on the receiving computer, Sysvia falls back to copying and removing it, with no error and no duplicate.
+
+**Override the others.** A send-only folder whose copies were changed on another computer now offers **Override the others**. It shows how many files were edited and added, and on confirming puts every computer back to your version. What it removes goes to the other computers' Recently removed files.
+
+**Relay for computers that cannot reach each other.** Sysvia does not host a relay. You can run `sysvia-relayd` on any machine with a public address, then turn on Relaying and enter its address under Settings, Connections on both computers. They encrypt their traffic between themselves, so the relay carries data it cannot read or change. It is off until you set it up.
+
+**Computers saved twice.** A computer that was listed twice, for example after a power cut, now merges into the entry that is online.
+
+**Fix.** The remove button on a folder no longer stays stuck after the folder is deleted.
+
+Computers paired on 2.0.x and 2.1.x stay paired. Nothing to redo.
+
+### 2.1.1
+
+**Change a folder's direction.** A folder's page has a Folder type menu: Send & Receive, Receive Only or Send Only. You can switch a folder without removing it, so a Receive Only copy can become two-way and keeps its place and its files. New folders accepted from another computer start as Send & Receive.
+
+**Fix.** On Windows desks with monitors at different display scaling, the screens in the layout editor are now matched to the right physical monitor, so edges and cursor movement line up with what you see.
+
+**Clearer sign-up.** Sign-up says up front what a password needs (12 or more characters with an uppercase letter, a lowercase letter, a number and a symbol) and tells you exactly which is missing. The confirmation link in the email now stays valid for 10 minutes, and you can ask for a new one after a minute. The support bundle in Settings says where to send it: support@getsysvia.com.
 
 ### 2.1.0
 
@@ -223,7 +248,7 @@ Install and open Sysvia on each computer. Then:
 > [!NOTE]
 > Both computers must be open and on the same subnet. A desktop on Ethernet and a laptop on a different Wi-Fi range will not see each other.
 
-Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. Sysvia has no relay servers.
+Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. For folders that cannot reach each other directly, Sysvia does not host a relay, but you can run your own (see 2.1.2 under [What's new](#whats-new)).
 
 ## Shortcuts and game mode
 
@@ -256,11 +281,10 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 
 - No Linux installer yet.
 - For a folder that already exists, ignore patterns and versioning are not editable yet.
-- Folder sync needs the computers to reach each other, on the same network or directly. There are no relay servers.
+- Folder sync needs the computers to reach each other, on the same network or directly, or through a relay you run yourself. Sysvia does not host one.
 - The clipboard carries text only. Images, files, and dragging a file across the desk are not supported. Share a folder instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
 - Game mode keeps the cursor on one monitor on Windows only. On a Mac it only stops the pointer crossing to another computer.
-- Desktop notifications do not name which computer a file came from, and there are no quiet hours yet.
 - The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted, but the window does not show that key for approval yet. Folder transfers use device certificates.
 
 ## Reference
