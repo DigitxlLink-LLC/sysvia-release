@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.2</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.3</b></a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
@@ -22,6 +22,8 @@
 <a href="#shortcuts-and-game-mode">Game mode</a>
 &nbsp;·&nbsp;
 <a href="#updating">Updating</a>
+&nbsp;·&nbsp;
+<a href="#beta-program">Beta program</a>
 &nbsp;·&nbsp;
 <a href="#whats-new">What's new</a>
 &nbsp;·&nbsp;
@@ -48,7 +50,7 @@ Sysvia keeps folders in sync between your computers and lets one keyboard and mo
 | --- | --- |
 | **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, interrupted transfers that resume, and renames that move at once. |
 | **Desk** | One keyboard and mouse across several computers. Push the pointer off a screen edge and it lands on the next machine. |
-| **Clipboard** | Copy text on one computer, paste it on another. |
+| **Clipboard** | Copy text or an image on one computer, paste it on another. Screenshots and "Copy image" work between Windows and Mac. |
 | **Shortcuts and game mode** | Keys that work from anywhere on the computer, and a game mode that stops the keyboard and mouse from leaving it while you play. |
 | **Notifications** | Desktop alerts when a computer connects, files arrive, something fails, or an update is ready. |
 | **Private by design** | Your files and clipboard never pass through a server of ours. No cloud storage. If two computers cannot reach each other, they can use a relay you run yourself, and it cannot read what it carries. Traffic is TLS and tied to device identities. |
@@ -102,9 +104,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.1.2-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.2-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.1.2-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.1.3-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.3-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.1.3-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -121,12 +123,12 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.1.2-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.1.3-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.1.2-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.1.3-*.dmg
 ```
 
 </details>
@@ -166,14 +168,22 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 
 **From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-1. Install 2.1.2 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. Sysvia 2.1.2 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+1. Install 2.1.3 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Sysvia 2.1.3 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
 3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
 4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.1.3
+
+**Copy and paste images between Windows and Mac.** A screenshot (`Win+Shift+S` on Windows, `Cmd+Ctrl+Shift+4` on a Mac) or an image you right-click and Copy now pastes on your other computer, not just text. It follows the **Clipboard sharing** setting, so there is nothing new to switch on, and it is on for computers that had it off before. Images up to 10 MB are sent. If a copy holds both text and a picture (cells copied from a spreadsheet, for example), the text is what arrives. An image that came from another computer is not sent back to it.
+
+**Beta program.** Members can now try upcoming versions before everyone else. It is opt-in and one click to leave: **Settings**, then **Updates**, then **Beta program**. Beta testers get a **Beta tester** badge on their profile in the app and on the website. See [Beta program](#beta-program).
+
+Computers paired on 2.0.x and 2.1.x stay paired. Nothing to redo.
 
 ### 2.1.2
 
@@ -235,6 +245,17 @@ A cleanup release. The last pieces of the old Syncthing-based engine are gone, a
 
 **Each account has its own computers and folders.** If several people sign in to Sysvia on one computer, one account no longer sees another account's computers and folders. The first account to sign in after updating keeps the existing setup. Other accounts start with their own, which also means their own ID when pairing.
 
+## Beta program
+
+Want to try what is coming before it is released? Members with an active license can join the beta. You get new builds first, tell us what breaks, and get a **Beta tester** badge on your profile in the app and on the website.
+
+1. Open **Settings**, then **Updates**, and find **Beta program**. You can also use **Account** on [getsysvia.com](https://getsysvia.com/dashboard).
+2. Read the [Beta Program Terms](https://getsysvia.com/beta-terms), tick the box, and choose **Join the beta**.
+
+From then on Sysvia looks for new builds in the [beta releases](https://github.com/DigitxlLink-LLC/sysvia-beta-release/releases/latest) instead of here. Beta builds can be unstable, so keep a backup of anything you cannot afford to lose.
+
+**Leaving** takes one click: **Leave the beta** in the same place. Sysvia goes back to the releases here and your badge is removed. You stay on the version you have until a public release newer than it comes out.
+
 ## Set up a desk
 
 Install and open Sysvia on each computer. Then:
@@ -282,7 +303,7 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 - No Linux installer yet.
 - For a folder that already exists, ignore patterns and versioning are not editable yet.
 - Folder sync needs the computers to reach each other, on the same network or directly, or through a relay you run yourself. Sysvia does not host one.
-- The clipboard carries text only. Images, files, and dragging a file across the desk are not supported. Share a folder instead.
+- The clipboard carries text and images (up to 10 MB each). Files and dragging a file across the desk are not supported. Share a folder instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
 - Game mode keeps the cursor on one monitor on Windows only. On a Mac it only stops the pointer crossing to another computer.
 - The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted, but the window does not show that key for approval yet. Folder transfers use device certificates.
