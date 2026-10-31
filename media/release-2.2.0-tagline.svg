@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 140" width="1500" height="140">
+<style>
+text{font-family:'Segoe UI',-apple-system,'Helvetica Neue',Arial,sans-serif;font-size:56px;font-weight:300;letter-spacing:2px;fill:#2bb5a0;text-anchor:middle}
+.w{opacity:0;animation:cy 9s infinite}
+.w2{animation-delay:.6s}.w3{animation-delay:1.2s}
+@keyframes cy{0%{opacity:0;transform:translateY(14px)}8%,82%{opacity:1;transform:translateY(0)}94%,100%{opacity:0;transform:translateY(-8px)}}
+</style>
+<text x="300" y="86" class="w">See it.</text>
+<text x="750" y="86" class="w w2">Use it.</text>
+<text x="1200" y="86" class="w w3">Extend it.</text>
+</svg>
