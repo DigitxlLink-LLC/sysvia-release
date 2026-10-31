@@ -11,11 +11,17 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.1.3</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.2.0</b></a>
+&nbsp;·&nbsp;
+<a href="#new-in-220">New in 2.2.0</a>
+&nbsp;·&nbsp;
+<a href="#coming-next">Coming next</a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
 <a href="#how-it-works">How it works</a>
+&nbsp;·&nbsp;
+<a href="#security">Security</a>
 &nbsp;·&nbsp;
 <a href="#notifications">Notifications</a>
 &nbsp;·&nbsp;
@@ -31,6 +37,33 @@
 &nbsp;·&nbsp;
 <a href="#reference">Reference</a>
 </p>
+
+## New in 2.2.0
+
+**The biggest update since 2.0.** Easier to set up, plainer to read, and much harder to attack.
+
+| | |
+| --- | --- |
+| **Workspaces, in plain words** | A workspace is a group of your computers that work together. No blocking first screen: the first computer you add starts **My computers**, and the next ones join it. |
+| **Notifications, per computer** | Choose which of your computers pop up alerts, with three simple settings: **Everything**, **Important only** or **Off**. |
+| **Add a computer in one step** | A Device ID, a name and a workspace. Everything else is under **More options**. |
+| **Connect from anywhere** | Off by default. Computers on different networks find each other, with no router changes. |
+| **A safer Sysvia** | Only computers you added can reach your keyboard and mouse, and Sysvia's background services answer only to the app. |
+| **Clearer and more private** | **Desk** is now **Input sharing**, and network addresses show as dots until you click them. |
+
+> [!IMPORTANT]
+> **Update every computer on a desk.** Keyboard and mouse sharing is stricter in 2.2.0, and a desk works best when all of its computers run the same version. Paired computers stay paired. The full list is under [2.2.0](#220) in What's new.
+
+## Coming next
+
+Two big features are built and still being tested. **They are not in the 2.2.0 download**, and there is no date yet.
+
+| | |
+| --- | --- |
+| **Remote screen** | See and use another computer's screen from yours, with every screen of that computer and its pointer drawn. It is off by default: the person at the computer chooses which of their computers may look or take control, and can be asked each time. A bar across the top of that screen shows whenever someone is looking, with a **Stop** button. |
+| **Extended monitors** | Another computer's monitors become extra screens on this one, with no cable, in both directions: a Mac can lend its monitors to a PC, and a Windows PC can lend its monitors to a Mac. Windows can be dragged between your own screens and the added ones. It is off unless the person at that computer allows it, and turning it off ends the session. |
+
+Both follow the same rule as the rest of Sysvia: nothing happens on a computer unless the person using it has allowed it.
 
 ## What it does
 
@@ -49,11 +82,13 @@ Sysvia keeps folders in sync between your computers and lets one keyboard and mo
 | | |
 | --- | --- |
 | **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, interrupted transfers that resume, and renames that move at once. |
-| **Desk** | One keyboard and mouse across several computers. Push the pointer off a screen edge and it lands on the next machine. |
+| **Workspaces** | Group your computers the way you use them, like a home office or a studio, and choose which of them show notifications. |
+| **Input sharing** | One keyboard and mouse across several computers, set up as a desk. Push the pointer off a screen edge and it lands on the next machine. |
 | **Clipboard** | Copy text or an image on one computer, paste it on another. Screenshots and "Copy image" work between Windows and Mac. |
 | **Shortcuts and game mode** | Keys that work from anywhere on the computer, and a game mode that stops the keyboard and mouse from leaving it while you play. |
 | **Notifications** | Desktop alerts when a computer connects, files arrive, something fails, or an update is ready. |
-| **Private by design** | Your files and clipboard never pass through a server of ours. No cloud storage. If two computers cannot reach each other, they can use a relay you run yourself, and it cannot read what it carries. Traffic is TLS and tied to device identities. |
+| **Connect from anywhere** | Optional. Computers on different networks find each other through your account, which only passes short signed notes. Off until you turn it on. |
+| **Private by design** | Your files and clipboard never pass through a server of ours. No cloud storage. If two computers cannot reach each other, they can use a relay you run yourself, and it cannot read what it carries. Traffic is TLS and tied to device identities. See [Security](#security). |
 
 ## How it works
 
@@ -85,6 +120,20 @@ flowchart LR
 - **Identity.** Every computer has its own Device ID and certificate. Pair two computers once and they recognize each other from then on.
 - **Local control.** The app talks to its own services over `127.0.0.1` only. None of those ports are meant to be reachable from outside. See [Network ports](#reference).
 
+## Security
+
+Your files, clipboard and keystrokes stay between your own computers. Version 2.2.0 added a full round of hardening on top of that:
+
+| | |
+| --- | --- |
+| **Encrypted, and tied to identities** | Every computer has its own Device ID and certificate. Traffic between computers is TLS, and a computer is recognized by its certificate, never by a name or an address. |
+| **Your keyboard and mouse answer only to computers you chose** | The desk accepts a computer if you added it or connected to it yourself. Anything else on the network is turned away before it learns anything about your screens, and it cannot tie up the desk by connecting and saying nothing. |
+| **Background services take orders only from the app** | The ports Sysvia uses on your own computer need a secret that only the app has: the desk service's is made again every time Sysvia starts, the file sync engine's once per computer. Other programs on the same computer cannot drive them. |
+| **Deleting stays inside the folder** | Removing something through a link in a shared folder can no longer reach files outside it, and on Windows the administrator delete no longer writes a script file that could be swapped. |
+| **Local by default** | Finding computers happens on your network. The account is only used if you turn on [Connect from anywhere](#220), and it never sees file names, contents, keystrokes or screens. |
+
+Found a security problem? Please tell us first at support@getsysvia.com.
+
 ## Screens
 
 <p align="center">
@@ -94,7 +143,7 @@ flowchart LR
 
 <p align="center">
 <img src="media/computers.png" alt="The Computers page." width="32%" align="top">
-<img src="media/desk.png" alt="The Desk page." width="32%" align="top">
+<img src="media/desk.png" alt="The Input sharing page, called Desk before 2.2.0." width="32%" align="top">
 <img src="media/layout.png" alt="The desk layout editor." width="32%" align="top">
 </p>
 
@@ -104,9 +153,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.1.3-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.1.3-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.1.3-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.2.0-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.2.0-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.2.0-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -123,12 +172,12 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.1.3-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.2.0-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.1.3-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.2.0-*.dmg
 ```
 
 </details>
@@ -156,7 +205,9 @@ Alerts are kept calm on purpose:
 
 Clicking an alert brings Sysvia forward and opens the page it was about: Computers for connections, Folders for syncs and problems.
 
-**Settings.** Open the bell at the top of the window, then the settings icon. **Desktop notifications** turns every alert off at once; **File syncs**, **Connections**, **Errors and alerts** and **Updates** switch each kind. Your choices are kept even when the window is closed to the tray. **Sound** turns Sysvia's notification sound on or off. **Quiet hours** holds desktop alerts between two times you choose, across midnight if needed; the bell list still records them. **Send a test notification** shows a real alert and tells you why one did not appear: switched off, held by quiet hours, refused by the system, or hidden by Focus assist or Do Not Disturb.
+**Settings.** Open the bell at the top of the window, then the settings icon. Under **What should pop up on this computer?** choose **Everything**, **Important only** or **Off**. **More options** has the fine controls: **Desktop notifications** turns every alert off at once; **File syncs**, **Connections**, **Errors and alerts** and **Updates** switch each kind. Your choices are kept even when the window is closed to the tray. **Sound** turns Sysvia's notification sound on or off.
+
+**Which computers show them.** Each workspace has a **Show notifications on** list, and every computer shows notifications until you untick it. Set it in the workspace editor, on the workspace card, or in the bell menu, where one switch per workspace controls this computer. It only holds back connection and file-sync pop-ups: problems, updates and security alerts always show, and a muted computer still lists everything in the bell menu. The choice follows your account. **Quiet hours** holds desktop alerts between two times you choose, across midnight if needed; the bell list still records them. **Send a test notification** shows a real alert and tells you why one did not appear: switched off, held by quiet hours, refused by the system, or hidden by Focus assist or Do Not Disturb.
 
 **macOS.** Allow notifications for Sysvia the first time macOS asks, or later under System Settings, Notifications, Sysvia. Focus modes and Do Not Disturb hide them, as with any app.
 
@@ -164,18 +215,74 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 
 ## Updating
 
-**From 2.0.0 or later.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are.
+**From 2.0.0 or later.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are. Update every computer on a desk: keyboard and mouse sharing is stricter in 2.2.0, so if a computer you expect is turned away at first, open **Computers** on the host and switch **Share keyboard and mouse** on for it.
 
 **From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-1. Install 2.1.3 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. Sysvia 2.1.3 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+1. Install 2.2.0 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Sysvia 2.2.0 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
 3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
 4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.2.0
+
+The biggest update since 2.0. Getting started is simpler, the app says what it means in plain words, and Sysvia is a good deal harder to attack. Your computers stay paired and nothing in your folders changes. Update every computer on a desk, since keyboard and mouse sharing is stricter.
+
+**Workspaces, in plain words.** A workspace is a group of your computers that work together, like "Home office": a desktop and a laptop. The blocking "Create a workspace" screen is gone. You go straight into the setup tour, the first computer you add starts a workspace called **My computers**, and the next ones join it. When you add a computer you choose which workspace it joins, or start a new one. **Park** and **Activate** are now **Hide** and **Show**, which decide whether a workspace appears in Overview on this computer. An empty Overview says "Connect your first computer" and has an **Add a computer** button. The tour has two new steps: what a workspace is, and where notifications show.
+
+**Add a computer, simplified.** The window asks for the Device ID (or a nearby computer), a name, whether to share the keyboard and mouse, and which workspace. The address, compression, which folders to share and "introduce other computers" are under **More options**.
+
+**Choose which computers show notifications.** Each workspace has a **Show notifications on** list. Every computer shows notifications until you untick it, so your always-on desktop can stay quiet while your laptop keeps telling you what arrived. It only holds back connection and file-sync pop-ups. Problems, updates and security alerts always show, and a muted computer still lists everything in the bell menu. The choice follows your account. See [Notifications](#notifications).
+
+**Three simple notification settings.** **Everything**, **Important only** or **Off**. Categories, sound and quiet hours are under **More options**. A connection notification no longer puts the computer's address on screen.
+
+**Clearer names, more private screens.**
+
+- The **Desk** page is now **Input sharing**. **Desk layout** keeps its name.
+- Network addresses show as dots until you click them, on Profile, Input sharing, nearby computers and Diagnostics, so a screenshot or a screen share does not give them away.
+- Settings no longer shows the app's internal key. Your own name is labelled **This computer's name**.
+- The Input sharing page no longer has the "Show other screen" section or the system permission notice.
+
+**Connect from anywhere (off by default).** Turn it on in **Settings** and your computers on different networks can find each other, with no router changes. Sysvia uses your account to pass short signed notes between your own computers, and nothing else. It never sees file names, file contents, keystrokes or screens, and nothing is stored: the notes are passed on live and gone. Both computers need it on, with Sysvia running.
+
+**A safer Sysvia.** This release is the result of a full security review. See [Security](#security).
+
+- Only computers you have added, or connected to yourself, can reach your keyboard and mouse. Anything else on the network is turned away before it learns a thing about your screens, and it cannot tie up the desk by connecting and staying silent.
+- Sysvia's background services take orders only from the Sysvia app. Other programs on the same computer can no longer drive them.
+- The file sync engine's key is made fresh on every computer and is no longer passed on the command line, where other programs could read it.
+- Deleting through a link inside a shared folder can no longer reach outside it, and the administrator delete on Windows no longer writes a script file that someone could swap.
+
+**Fix.** A key or mouse button held down by another computer is let go when that computer leaves, disconnects or goes quiet, so keys no longer stay stuck.
+
+Computers paired on 2.0.x and 2.1.x stay paired. If a computer you expect is turned away at first, open **Computers** on the host and switch **Share keyboard and mouse** on for it.
+
+### 2.1.6
+
+**A guided setup for new computers.** The first time you sign in with your subscription, Sysvia walks you through connecting a computer, sharing a folder, and sharing your keyboard and mouse. It dims the rest of the app and lights up only the control to use, and you do each step yourself. Skip it any time, and replay it from **Settings**, then **General**, under **Setup help**.
+
+**A short guide for every page.** The small **i** button in the header of Overview, Folders, Computers, Desk, Diagnostics and Settings walks you through that page and nothing else. You can also type "guide" in the search bar. The Desk guide now includes arranging your screens in **Desk layout**.
+
+**Search by voice.** The microphone in the search bar now works. Click it, say what you want, and the words appear in the search box as you speak. Your voice is turned into text on your computer and is never sent anywhere. The speech model comes with Sysvia, so the download is about 70 MB larger, and the first time your computer asks whether Sysvia may use the microphone.
+
+**Pointer lag after sleep or a slow network is shorter.** When the link between two computers stalls for a moment, for example just after one wakes from sleep, the operating system used to keep several seconds of mouse movement waiting to be sent, and the pointer then crawled through all of it once the link came back. Sysvia now keeps only a small amount waiting, and the extra movement is combined into one step, so the pointer catches up almost at once. Update every computer on the desk, since both sides send.
+
+**A slow link leaves a note in the log.** When sending to another computer takes unusually long, Sysvia writes one line about it to the log (at most one a second), so a moment of lag can be matched with the moment the network struggled. It shows up in a support bundle.
+
+### 2.1.5
+
+**Your computers reconnect by themselves after sleep.** Close a Mac's lid, open it again, and the desk links to your other computers come back on their own, within about a minute, with no clicking and even if the Sysvia window is closed. Before, a link that dropped while a computer slept could stay listed as connected, and Sysvia only tried again when you opened the Desk page. Now Sysvia checks in the background, looks again as soon as the computer wakes or the screen unlocks, and drops a link that has stopped responding so it can be made again. If the other computer's address changed while it slept, Sysvia uses the new one. Update every computer on the desk to get the full effect, since part of the fix is in the background service.
+
+**Less pointer lag after a slow moment.** If the network between two computers stalls for a few seconds, for example right after one wakes from sleep, the mouse no longer replays a long queue of old movements when the link recovers. Extra movement is combined into one step, so the pointer lands in the same place without the drawn-out catch-up.
+
+### 2.1.4
+
+**Updating on a Mac installs by itself.** Clicking **Update** now closes Sysvia, installs the new version and opens it again. Before, the window only hid to the menu bar and the update waited until you quit Sysvia by hand from the menu bar. The first update that brings this fix still needs one manual quit, because the version you are running does not have it yet.
+
+**Leaving the beta takes you back to the public release.** If this computer is running a beta build, **Leave the beta** now switches it back to the latest public release: Sysvia downloads it and restarts. If you left from the website, **Settings**, then **Updates**, then **Beta program** has a **Switch to the stable release** button.
 
 ### 2.1.3
 
@@ -254,14 +361,14 @@ Want to try what is coming before it is released? Members with an active license
 
 From then on Sysvia looks for new builds in the [beta releases](https://github.com/DigitxlLink-LLC/sysvia-beta-release/releases/latest) instead of here. Beta builds can be unstable, so keep a backup of anything you cannot afford to lose.
 
-**Leaving** takes one click: **Leave the beta** in the same place. Sysvia goes back to the releases here and your badge is removed. You stay on the version you have until a public release newer than it comes out.
+**Leaving** takes one click: **Leave the beta** in the same place. Sysvia goes back to the releases here and your badge is removed. If this computer is running a beta build, leaving in the app also switches it back to the latest public release: Sysvia downloads it and restarts. If you left on the website, use **Switch to the stable release** in the same place in the app.
 
 ## Set up a desk
 
 Install and open Sysvia on each computer. Then:
 
-1. On the computer whose keyboard you want to use, open **Desk** and choose **Host this desk**.
-2. On the other computer, choose **Join** and enter the host's LAN address. Desk can copy it for you.
+1. On the computer whose keyboard you want to use, open **Input sharing** and choose **Host this desk**.
+2. On the other computer, choose **Join** and enter the host's LAN address. Input sharing can copy it for you.
 3. Wait for that computer to appear under **Active sessions**. "Nearby" only means a discovery packet arrived.
 4. Open the layout, snap the other computer to the edge it physically sits on, and apply.
 5. Push the pointer off that edge.
@@ -284,7 +391,7 @@ These work from anywhere on the computer, even while a game or another app is in
 
 Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 
-**Game mode** is for the computer that is sharing its keyboard and mouse (the host). While it is on, the pointer no longer crosses to another computer and your input stays on this one. Turn it on from the **Desk** page or with `Ctrl+Alt+G`. It always starts off when Sysvia launches and turns itself off if you stop hosting. On Windows it also holds the cursor on the monitor your game is on. Taking the keyboard back with `Ctrl+Alt+Esc` releases it.
+**Game mode** is for the computer that is sharing its keyboard and mouse (the host). While it is on, the pointer no longer crosses to another computer and your input stays on this one. Turn it on from the **Input sharing** page or with `Ctrl+Alt+G`. It always starts off when Sysvia launches and turns itself off if you stop hosting. On Windows it also holds the cursor on the monitor your game is on. Taking the keyboard back with `Ctrl+Alt+Esc` releases it.
 
 <details>
 <summary id="macos-permissions">macOS permissions</summary>
@@ -306,7 +413,7 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 - The clipboard carries text and images (up to 10 MB each). Files and dragging a file across the desk are not supported. Share a folder instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
 - Game mode keeps the cursor on one monitor on Windows only. On a Mac it only stops the pointer crossing to another computer.
-- The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted, but the window does not show that key for approval yet. Folder transfers use device certificates.
+- The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted and accepts only computers you added or connected to, but the window does not show that key for approval yet. Folder transfers use device certificates.
 
 ## Reference
 
@@ -319,11 +426,11 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 | --- | --- | --- |
 | 22000 | Folder data | |
 | 21037 UDP | Folder discovery on the LAN | |
-| 8384 | Folder sync local API | `127.0.0.1` only. Do not publish it. |
-| 24810 | Desk session | |
-| 24811 | Window control | `127.0.0.1` only. |
+| 8384 | Folder sync local API | `127.0.0.1` only. Needs a key only the app has. Do not publish it. |
+| 24810 | Desk session | Accepts only computers you added or connected to. |
+| 24811 | Window control | `127.0.0.1` only. Needs a secret only the app has. |
 | 24812 UDP | Desk discovery | |
-| 24813 | Screen frames for the viewer | `127.0.0.1` only. |
+| 24813 | Screen frames for the viewer | `127.0.0.1` only. Needs a key only the viewer has. |
 | 5353 UDP | mDNS, `_sysvia._tcp` | |
 
 </details>
