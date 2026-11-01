@@ -279,98 +279,6 @@ The biggest update since 2.0. You can now see and use another computer's screen,
 
 Computers paired on 2.0.x and 2.1.x stay paired. If a computer you expect is turned away at first, open **Computers** on the host and switch **Share keyboard and mouse** on for it.
 
-### 2.1.6
-
-**A guided setup for new computers.** The first time you sign in with your subscription, Sysvia walks you through connecting a computer, sharing a folder, and sharing your keyboard and mouse. It dims the rest of the app and lights up only the control to use, and you do each step yourself. Skip it any time, and replay it from **Settings**, then **General**, under **Setup help**.
-
-**A short guide for every page.** The small **i** button in the header of Overview, Folders, Computers, Desk, Diagnostics and Settings walks you through that page and nothing else. You can also type "guide" in the search bar. The Desk guide now includes arranging your screens in **Desk layout**.
-
-**Search by voice.** The microphone in the search bar now works. Click it, say what you want, and the words appear in the search box as you speak. Your voice is turned into text on your computer and is never sent anywhere. The speech model comes with Sysvia, so the download is about 70 MB larger, and the first time your computer asks whether Sysvia may use the microphone.
-
-**Pointer lag after sleep or a slow network is shorter.** When the link between two computers stalls for a moment, for example just after one wakes from sleep, the operating system used to keep several seconds of mouse movement waiting to be sent, and the pointer then crawled through all of it once the link came back. Sysvia now keeps only a small amount waiting, and the extra movement is combined into one step, so the pointer catches up almost at once. Update every computer on the desk, since both sides send.
-
-**A slow link leaves a note in the log.** When sending to another computer takes unusually long, Sysvia writes one line about it to the log (at most one a second), so a moment of lag can be matched with the moment the network struggled. It shows up in a support bundle.
-
-### 2.1.5
-
-**Your computers reconnect by themselves after sleep.** Close a Mac's lid, open it again, and the desk links to your other computers come back on their own, within about a minute, with no clicking and even if the Sysvia window is closed. Before, a link that dropped while a computer slept could stay listed as connected, and Sysvia only tried again when you opened the Desk page. Now Sysvia checks in the background, looks again as soon as the computer wakes or the screen unlocks, and drops a link that has stopped responding so it can be made again. If the other computer's address changed while it slept, Sysvia uses the new one. Update every computer on the desk to get the full effect, since part of the fix is in the background service.
-
-**Less pointer lag after a slow moment.** If the network between two computers stalls for a few seconds, for example right after one wakes from sleep, the mouse no longer replays a long queue of old movements when the link recovers. Extra movement is combined into one step, so the pointer lands in the same place without the drawn-out catch-up.
-
-### 2.1.4
-
-**Updating on a Mac installs by itself.** Clicking **Update** now closes Sysvia, installs the new version and opens it again. Before, the window only hid to the menu bar and the update waited until you quit Sysvia by hand from the menu bar. The first update that brings this fix still needs one manual quit, because the version you are running does not have it yet.
-
-**Leaving the beta takes you back to the public release.** If this computer is running a beta build, **Leave the beta** now switches it back to the latest public release: Sysvia downloads it and restarts. If you left from the website, **Settings**, then **Updates**, then **Beta program** has a **Switch to the stable release** button.
-
-### 2.1.3
-
-**Copy and paste images between Windows and Mac.** A screenshot (`Win+Shift+S` on Windows, `Cmd+Ctrl+Shift+4` on a Mac) or an image you right-click and Copy now pastes on your other computer, not just text. It follows the **Clipboard sharing** setting, so there is nothing new to switch on, and it is on for computers that had it off before. Images up to 10 MB are sent. If a copy holds both text and a picture (cells copied from a spreadsheet, for example), the text is what arrives. An image that came from another computer is not sent back to it.
-
-**Beta program.** Members can now try upcoming versions before everyone else. It is opt-in and one click to leave: **Settings**, then **Updates**, then **Beta program**. Beta testers get a **Beta tester** badge on their profile in the app and on the website. See [Beta program](#beta-program).
-
-Computers paired on 2.0.x and 2.1.x stay paired. Nothing to redo.
-
-### 2.1.2
-
-**Notifications you can tune.** Sync alerts now say which computer the change came from, such as "cover.psd from Studio PC in Photos". Only the big events play Sysvia's sound: updates, errors, and a folder finishing a large sync. Connections and small syncs are silent. A new **Quiet hours** setting holds desktop alerts between two times, and **Send a test notification** in the settings shows a real alert and tells you why one did not appear. See [Notifications](#notifications).
-
-**Renames and moves are instant.** Rename a large file or move a whole folder and the other computers move their copy too, without sending any data. If the file is open in another program on the receiving computer, Sysvia falls back to copying and removing it, with no error and no duplicate.
-
-**Override the others.** A send-only folder whose copies were changed on another computer now offers **Override the others**. It shows how many files were edited and added, and on confirming puts every computer back to your version. What it removes goes to the other computers' Recently removed files.
-
-**Relay for computers that cannot reach each other.** Sysvia does not host a relay. You can run `sysvia-relayd` on any machine with a public address, then turn on Relaying and enter its address under Settings, Connections on both computers. They encrypt their traffic between themselves, so the relay carries data it cannot read or change. It is off until you set it up.
-
-**Computers saved twice.** A computer that was listed twice, for example after a power cut, now merges into the entry that is online.
-
-**Fix.** The remove button on a folder no longer stays stuck after the folder is deleted.
-
-Computers paired on 2.0.x and 2.1.x stay paired. Nothing to redo.
-
-### 2.1.1
-
-**Change a folder's direction.** A folder's page has a Folder type menu: Send & Receive, Receive Only or Send Only. You can switch a folder without removing it, so a Receive Only copy can become two-way and keeps its place and its files. New folders accepted from another computer start as Send & Receive.
-
-**Fix.** On Windows desks with monitors at different display scaling, the screens in the layout editor are now matched to the right physical monitor, so edges and cursor movement line up with what you see.
-
-**Clearer sign-up.** Sign-up says up front what a password needs (12 or more characters with an uppercase letter, a lowercase letter, a number and a symbol) and tells you exactly which is missing. The confirmation link in the email now stays valid for 10 minutes, and you can ask for a new one after a minute. The support bundle in Settings says where to send it: support@getsysvia.com.
-
-### 2.1.0
-
-**Game mode.** One switch on the computer that is sharing its keyboard and mouse stops them from crossing to another computer, so the cursor stays put while you play. Turn it on from the **Desk** page or with a shortcut, and a **Game mode** badge in the header shows while it is on. It is always off when Sysvia starts. On Windows it also keeps the cursor on the monitor your game is running on, so it cannot drift onto a second screen where you cannot see it. See [Shortcuts and game mode](#shortcuts-and-game-mode).
-
-**Shortcuts you can change.** A new **Shortcuts** tab in Settings lets you choose the keys for game mode, for viewing another computer's screen, and for bringing Sysvia to the front. They work from anywhere on the computer, even with a game in front, and changes apply right away. Sysvia tells you when a combination is already taken.
-
-**On-screen confirmation.** A small message appears for a moment when a shortcut is used, even if Sysvia is minimized or a game is in front. It can be turned off in the Shortcuts tab.
-
-**Fixes.** Removing a folder now fades its row out, and pressing the remove button twice no longer sends the request twice. If the background service is older than the app, game mode now says so instead of failing without a word.
-
-Computers paired on 2.0.x stay paired. Nothing to redo.
-
-### 2.0.2
-
-**Desktop notifications.** Sysvia now tells you when a computer connects or goes offline, when files arrive from another computer, when a folder needs attention, and when an update is ready. Alerts are grouped and rate-limited so a big sync is one message, not hundreds, and they are held back while the window is in front of you. Clicking one opens the page it was about. Each kind can be switched off, and so can all of them. See [Notifications](#notifications).
-
-**Faster updates.** Sysvia now looks for a new version a few seconds after launch and then every ten minutes, instead of every few hours. It also checks when you return to the window or wake the computer, and tries again soon after a failed check.
-
-**Fix.** A folder whose errors had cleared no longer shows up in the activity list as "needs attention" with zero errors.
-
-### 2.0.1
-
-A cleanup release. The last pieces of the old Syncthing-based engine are gone, and file sync is named Sysvia Sync inside the app. Nothing changes in how you use Sysvia, and pairings made in 2.0.0 carry over. The one difference is for people updating from 1.x, who now add their folders again (see [Updating](#updating)).
-
-### 2.0
-
-**A sync engine written for Sysvia.** Syncthing is no longer part of the app. File sync now runs on Sysvia's own engine, so the installer no longer ships any Syncthing files. On many small files it is much faster. In our tests, with two copies running on one Mac, a first sync of 3,000 small files took about 1.6 seconds. The old engine took about 15. Large files take about the same time as before.
-
-**Built to survive a power cut.** The computer's identity and settings are written to disk in a way that survives losing power, with a backup copy next to each, so a computer keeps its ID and does not turn up as a second computer afterwards. If the index of your files is damaged, Sysvia sets it aside and rebuilds it from your folders instead of downloading everything again. A transfer that was interrupted picks up from the blocks it already had.
-
-**Undo for receive-only folders.** A folder set to receive changes only never sends what you change on that computer. If you have edited or added things there and want it back to how the others have it, open the folder and choose **Revert local changes**. What you had is moved to the folder's trash first, not deleted.
-
-**Removed files can be restored.** When another computer deletes or replaces a file, the old copy is kept for 7 days in `.sysvia/trash` inside the folder. A new **Recently removed files** list on the folder page shows them, with a **Restore** button on each. If the file's old place is taken, it comes back next to it as `name (restored)` and nothing is overwritten.
-
-**Each account has its own computers and folders.** If several people sign in to Sysvia on one computer, one account no longer sees another account's computers and folders. The first account to sign in after updating keeps the existing setup. Other accounts start with their own, which also means their own ID when pairing.
-
 ## Beta program
 
 Want to try what is coming before it is released? Members with an active license can join the beta. You get new builds first, tell us what breaks, and get a **Beta tester** badge on your profile in the app and on the website.
@@ -395,7 +303,7 @@ Install and open Sysvia on each computer. Then:
 > [!NOTE]
 > Both computers must be open and on the same subnet. A desktop on Ethernet and a laptop on a different Wi-Fi range will not see each other.
 
-Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. For folders that cannot reach each other directly, Sysvia does not host a relay, but you can run your own (see 2.1.2 under [What's new](#whats-new)).
+Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. For folders that cannot reach each other directly, Sysvia does not host a relay, but you can run your own: start `sysvia-relayd` on any machine with a public address, then turn on Relaying and enter its address under **Settings**, then **Connections**, on both computers. They encrypt their traffic between themselves, so the relay carries data it cannot read or change.
 
 ## Shortcuts and game mode
 
