@@ -1,8 +1,4 @@
 <p align="center">
-<img src="media/release-2.3.2-banner.jpg" alt="Sysvia v2.3.2" width="100%">
-</p>
-
-<p align="center">
 <img src="media/hero.webp" alt="Sysvia. One desktop across every machine. Sync files and use one keyboard, mouse, and clipboard across your computers, privately, over your local network." width="100%">
 </p>
 
