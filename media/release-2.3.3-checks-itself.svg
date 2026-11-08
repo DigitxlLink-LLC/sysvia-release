@@ -1,36 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 600" width="1520" height="600" role="img" aria-labelledby="t d">
-<title id="t">It tries its own capture first</title>
-<desc id="d">When switched on, the engine tries its own capture once. If it produces pictures fast enough it is used; if not, the usual capture shares the screen instead.</desc>
-<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1119"/><stop offset="1" stop-color="#131c29"/></linearGradient>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#9aa8b6"/></marker>
-</defs>
-<style>text{font-family:-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif}.t{fill:#f3f6f8;font-weight:600}.m{fill:#9aa8b6}</style>
-<rect width="1520" height="600" rx="28" fill="url(#bg)" stroke="#243247"/>
-<text x="760" y="74" font-size="42" class="t" text-anchor="middle" >It tries its own capture first</text>
-<text x="760" y="112" font-size="24" class="m" text-anchor="middle" >Switch it on and the engine checks, once, that it can do the job on this PC</text>
-<g transform="translate(0 48)">
-<rect x="60" y="200" width="240" height="100" rx="18" fill="#152033" stroke="#2a3a52"/>
-<text x="180" y="246" font-size="28" class="t" text-anchor="middle" >Switch on</text>
-<text x="180" y="280" font-size="20" class="m" text-anchor="middle" >Settings, General</text>
-<rect x="370" y="200" width="340" height="100" rx="18" fill="#152033" stroke="#2a3a52"/>
-<text x="540" y="246" font-size="28" class="t" text-anchor="middle" >Try a capture</text>
-<text x="540" y="280" font-size="20" class="m" text-anchor="middle" >for a moment</text>
-<path d="M790 160 L925 250 L790 340 L655 250z" fill="#152033" stroke="#2a3a52" transform="translate(110 0)"/>
-<text x="900" y="244" font-size="24" class="t" text-anchor="middle" >Pictures,</text><text x="900" y="274" font-size="24" class="t" text-anchor="middle" >each under 25 ms?</text>
-<g opacity="0.7"><path d="M300 250 H370M710 250 H765" stroke="#9aa8b6" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/></g>
-<path d="M1035 250 H1055 C1100 250 1100 156 1150 156" stroke="#5fd39a" stroke-width="2.5" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
-<path d="M1035 250 H1055 C1100 250 1100 344 1150 344" stroke="#f1b95a" stroke-width="2.5" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
-<text x="1062" y="196" font-size="21" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">yes</text><text x="1062" y="318" font-size="21" class="t" text-anchor="middle" fill="#f1b95a" font-weight="600">no</text>
-<g><rect x="1150" y="106" width="330" height="100" rx="18" fill="#152033" stroke="#5fd39a"/>
-<text x="1315" y="152" font-size="28" class="t" text-anchor="middle" >Sysvia&#x2019;s own engine</text>
-<text x="1315" y="186" font-size="20" class="m" text-anchor="middle" >shares the screen</text><rect x="1150" y="106" width="330" height="100" rx="18" fill="none" stroke="#5fd39a" stroke-width="4" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.44;0.52;0.56;1" dur="9s" repeatCount="indefinite"/></rect></g>
-<g><rect x="1150" y="294" width="330" height="100" rx="18" fill="#152033" stroke="#f1b95a"/>
-<text x="1315" y="340" font-size="28" class="t" text-anchor="middle" >The usual capture</text>
-<text x="1315" y="374" font-size="20" class="m" text-anchor="middle" >shares it instead</text><rect x="1150" y="294" width="330" height="100" rx="18" fill="none" stroke="#f1b95a" stroke-width="4" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.90;0.94;0.99;1" dur="9s" repeatCount="indefinite"/></rect></g>
-<circle r="11" fill="#5fd39a"><animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.44;1" path="M180 250 H540 H790 H1030 C1090 250 1090 156 1150 156"/><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.43;0.44;1" dur="9s" repeatCount="indefinite"/></circle>
-<circle r="11" fill="#f1b95a"><animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5;0.94;1" path="M180 250 H540 H790 H1030 C1090 250 1090 344 1150 344"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.51;0.94;1" dur="9s" repeatCount="indefinite"/></circle>
-</g>
-<text x="760" y="510" font-size="25" class="t" text-anchor="middle" fill="#f3f6f8" font-weight="600">If it cannot, there is nothing for you to do: the usual capture carries on, as before.</text>
-<text x="760" y="548" font-size="22" class="m" text-anchor="middle" >The offer to switch it on only appears on PCs with an NVIDIA graphics card, the kind it has been proven on.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1520" height="880" viewBox="0 0 1520 880" role="img" aria-labelledby="title desc"><title id="title">A startup check with an automatic fallback</title><desc id="desc">Enable Faster screen sharing in Settings, General, and restart Sysvia. The engine checks that it produces pictures and encodes each in under 25 milliseconds. The two possible outcomes are shown separately: use the new engine when the check passes, or continue with browser capture when it fails.</desc><style>
+text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;fill:#203e35;font-weight:400}
+.title{font-weight:550;letter-spacing:-1.8px}.muted{fill:#65736a}.label{font-size:22px;letter-spacing:2.4px;font-weight:600}.mono{font-family:'SF Mono',Consolas,monospace}.strong{font-weight:600}
+.motion{transform-box:view-box}.window-slow{animation:drag 6s steps(12,end) infinite}.window-smooth{animation:drag 6s linear infinite}
+@keyframes drag{0%,8%{transform:translateX(0)}48%,58%{transform:translateX(310px)}98%,100%{transform:translateX(0)}}
+.scan{animation:scan 3s linear infinite}@keyframes scan{0%{transform:translateX(0)}100%{transform:translateX(640px)}}
+.packet{animation:packet 7s linear infinite}@keyframes packet{0%,6%{transform:translateX(0);opacity:0}8%{opacity:1}88%{opacity:1}92%,100%{transform:translateX(1232px);opacity:0}}
+.return{animation:return 4s linear infinite}@keyframes return{0%,8%{transform:translateX(0);opacity:0}12%,88%{opacity:1}92%,100%{transform:translateX(-1232px);opacity:0}}
+.sample{opacity:.16;animation:sample 8s infinite;animation-delay:var(--delay,0s)}@keyframes sample{0%,12%{opacity:.16}26%,84%{opacity:1}96%,100%{opacity:.16}}
+.result{animation:result 8s infinite}@keyframes result{0%,40%{opacity:.18}52%,87%{opacity:1}100%{opacity:.18}}
+@media(prefers-reduced-motion:reduce){.motion,.sample,.result{animation:none!important;opacity:1!important}}
+</style><rect x="0" y="0" width="1520" height="880" rx="0" fill="#f5f4ee" /><text x="64" y="64" font-size="22" class="label" >02  /  AUTOMATIC FALLBACK</text><text x="64" y="142" font-size="56" class="title">It checks before it switches.</text><text x="64" y="190" font-size="27" class="muted">The engine tries a capture at startup. Your screen keeps sharing either way.</text>
+<circle cx="86" cy="273" r="22" fill="#e8ecdf"/><text x="86" y="281" font-size="21" text-anchor="middle" class="strong">1</text><text x="125" y="268" font-size="26" class="strong">Switch it on</text><text x="125" y="302" font-size="22" class="muted">Settings → General</text><path d="M483 271l8 7-8 7" fill="none" stroke="#65736a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="558" cy="273" r="22" fill="#e8ecdf"/><text x="558" y="281" font-size="21" text-anchor="middle" class="strong">2</text><text x="597" y="268" font-size="26" class="strong">Restart Sysvia</text><text x="597" y="302" font-size="22" class="muted">The setting takes effect</text><path d="M955 271l8 7-8 7" fill="none" stroke="#65736a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="1030" cy="273" r="22" fill="#e8ecdf"/><text x="1030" y="281" font-size="21" text-anchor="middle" class="strong">3</text><text x="1069" y="268" font-size="26" class="strong">Check the capture</text><text x="1069" y="302" font-size="22" class="muted">Pictures + encoding time</text>
+<rect x="64" y="356" width="664" height="408" rx="14" fill="#fffef9" stroke="#d7dcd1"/><text x="96" y="402" font-size="22" class="label" >IF THE CHECK PASSES</text>
+<text x="96" y="444" font-size="24" class="muted">Pictures arrive. Encoding stays under 25 ms.</text>
+<rect x="96" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0s"/><rect x="138" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0.18s"/><rect x="180" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0.36s"/><rect x="222" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0.54s"/><rect x="264" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0.72s"/><rect x="306" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:0.8999999999999999s"/><rect x="348" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:1.08s"/><rect x="390" y="471" width="30" height="38" rx="3" fill="#37634e" class="sample" style="--delay:1.26s"/><path d="M96 541H696" fill="none" stroke="#d7dcd1" stroke-width="2" />
+<g><rect x="96" y="571" width="48" height="48" rx="24" fill="#e8ecdf" class="result"/><path d="M109 594l7 7 13-15" fill="none" stroke="#37634e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="160" y="604" font-size="30" class="strong">Use the Sysvia engine</text>
+<text x="96" y="659" font-size="25" class="muted">The faster stream starts automatically.</text></g>
+<text x="96" y="718" font-size="21" class="muted">One startup check. Then it gets out of the way.</text><rect x="792" y="356" width="664" height="408" rx="14" fill="#fffef9" stroke="#d7dcd1"/><text x="824" y="402" font-size="22" class="label" >IF THE CHECK FAILS</text>
+<text x="824" y="444" font-size="24" class="muted">No pictures, or encoding takes too long.</text>
+<rect x="824" y="471" width="30" height="24" rx="3" fill="#b1926f" class="sample" style="--delay:0s"/><rect x="866" y="471" width="30" height="38" rx="3" fill="#b1926f" class="sample" style="--delay:0.18s"/><rect x="908" y="471" width="30" height="54" rx="3" fill="#b1926f" class="sample" style="--delay:0.36s"/><rect x="950" y="471" width="30" height="24" rx="3" fill="#b1926f" class="sample" style="--delay:0.54s"/><rect x="992" y="471" width="30" height="65" rx="3" fill="#b1926f" class="sample" style="--delay:0.72s"/><rect x="1034" y="471" width="30" height="40" rx="3" fill="#b1926f" class="sample" style="--delay:0.8999999999999999s"/><rect x="1076" y="471" width="30" height="27" rx="3" fill="#b1926f" class="sample" style="--delay:1.08s"/><rect x="1118" y="471" width="30" height="59" rx="3" fill="#b1926f" class="sample" style="--delay:1.26s"/><path d="M824 541H1424" fill="none" stroke="#d7dcd1" stroke-width="2" />
+<g><rect x="824" y="571" width="48" height="48" rx="24" fill="#f2e8dc" class="result"/><path d="M840 588h16m-8-7-8 7 8 7" fill="none" stroke="#8a6137" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="888" y="604" font-size="30" class="strong">Use browser capture</text>
+<text x="824" y="659" font-size="25" class="muted">Your screen keeps sharing automatically.</text></g>
+<text x="824" y="718" font-size="21" class="muted">No settings to undo. No manual recovery.</text><path d="M64 798H1456" fill="none" stroke="#d7dcd1" stroke-width="2" /><text x="64" y="837" font-size="21" class="muted">Off by default. The offer to enable it appears only on NVIDIA PCs.</text><text x="1456" y="837" font-size="21" class="label" text-anchor="end">SYSVIA  /  2.3.3</text></svg>
