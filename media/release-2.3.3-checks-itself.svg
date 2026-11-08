@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 600" width="1520" height="600" role="img" aria-labelledby="t d">
+<title id="t">It tries its own capture first</title>
+<desc id="d">When switched on, the engine tries its own capture once. If it produces pictures fast enough it is used; if not, the usual capture shares the screen instead.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1119"/><stop offset="1" stop-color="#131c29"/></linearGradient>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#9aa8b6"/></marker>
+</defs>
+<style>text{font-family:-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif}.t{fill:#f3f6f8;font-weight:600}.m{fill:#9aa8b6}</style>
+<rect width="1520" height="600" rx="28" fill="url(#bg)" stroke="#243247"/>
+<text x="760" y="74" font-size="42" class="t" text-anchor="middle" >It tries its own capture first</text>
+<text x="760" y="112" font-size="24" class="m" text-anchor="middle" >Switch it on and the engine checks, once, that it can do the job on this PC</text>
+<g transform="translate(0 48)">
+<rect x="60" y="200" width="240" height="100" rx="18" fill="#152033" stroke="#2a3a52"/>
+<text x="180" y="246" font-size="28" class="t" text-anchor="middle" >Switch on</text>
+<text x="180" y="280" font-size="20" class="m" text-anchor="middle" >Settings, General</text>
+<rect x="370" y="200" width="340" height="100" rx="18" fill="#152033" stroke="#2a3a52"/>
+<text x="540" y="246" font-size="28" class="t" text-anchor="middle" >Try a capture</text>
+<text x="540" y="280" font-size="20" class="m" text-anchor="middle" >for a moment</text>
+<path d="M790 160 L925 250 L790 340 L655 250z" fill="#152033" stroke="#2a3a52" transform="translate(110 0)"/>
+<text x="900" y="244" font-size="24" class="t" text-anchor="middle" >Pictures,</text><text x="900" y="274" font-size="24" class="t" text-anchor="middle" >each under 25 ms?</text>
+<g opacity="0.7"><path d="M300 250 H370M710 250 H765" stroke="#9aa8b6" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/></g>
+<path d="M1035 250 H1055 C1100 250 1100 156 1150 156" stroke="#5fd39a" stroke-width="2.5" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
+<path d="M1035 250 H1055 C1100 250 1100 344 1150 344" stroke="#f1b95a" stroke-width="2.5" fill="none" marker-end="url(#arrow)" opacity="0.7"/>
+<text x="1062" y="196" font-size="21" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">yes</text><text x="1062" y="318" font-size="21" class="t" text-anchor="middle" fill="#f1b95a" font-weight="600">no</text>
+<g><rect x="1150" y="106" width="330" height="100" rx="18" fill="#152033" stroke="#5fd39a"/>
+<text x="1315" y="152" font-size="28" class="t" text-anchor="middle" >Sysvia&#x2019;s own engine</text>
+<text x="1315" y="186" font-size="20" class="m" text-anchor="middle" >shares the screen</text><rect x="1150" y="106" width="330" height="100" rx="18" fill="none" stroke="#5fd39a" stroke-width="4" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.40;0.44;0.52;0.56;1" dur="9s" repeatCount="indefinite"/></rect></g>
+<g><rect x="1150" y="294" width="330" height="100" rx="18" fill="#152033" stroke="#f1b95a"/>
+<text x="1315" y="340" font-size="28" class="t" text-anchor="middle" >The usual capture</text>
+<text x="1315" y="374" font-size="20" class="m" text-anchor="middle" >shares it instead</text><rect x="1150" y="294" width="330" height="100" rx="18" fill="none" stroke="#f1b95a" stroke-width="4" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.90;0.94;0.99;1" dur="9s" repeatCount="indefinite"/></rect></g>
+<circle r="11" fill="#5fd39a"><animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.44;1" path="M180 250 H540 H790 H1030 C1090 250 1090 156 1150 156"/><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.43;0.44;1" dur="9s" repeatCount="indefinite"/></circle>
+<circle r="11" fill="#f1b95a"><animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5;0.94;1" path="M180 250 H540 H790 H1030 C1090 250 1090 344 1150 344"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.51;0.94;1" dur="9s" repeatCount="indefinite"/></circle>
+</g>
+<text x="760" y="510" font-size="25" class="t" text-anchor="middle" fill="#f3f6f8" font-weight="600">If it cannot, there is nothing for you to do: the usual capture carries on, as before.</text>
+<text x="760" y="548" font-size="22" class="m" text-anchor="middle" >The offer to switch it on only appears on PCs with an NVIDIA graphics card, the kind it has been proven on.</text>
+</svg>

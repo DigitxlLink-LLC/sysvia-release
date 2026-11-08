@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 620" width="1520" height="620" role="img" aria-labelledby="t d">
+<title id="t">How one picture travels</title>
+<desc id="d">A picture is taken from the PC&#x2019;s screen, compressed on its graphics card, sent as packets, decoded on the other computer and drawn on its screen.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1119"/><stop offset="1" stop-color="#131c29"/></linearGradient>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#9aa8b6"/></marker>
+</defs>
+<style>text{font-family:-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif}.t{fill:#f3f6f8;font-weight:600}.m{fill:#9aa8b6}</style>
+<rect width="1520" height="620" rx="28" fill="url(#bg)" stroke="#243247"/>
+<text x="760" y="74" font-size="42" class="t" text-anchor="middle" >How one picture travels</text>
+<text x="760" y="112" font-size="24" class="m" text-anchor="middle" >Times measured on a Windows PC with an NVIDIA RTX 3070, seen from a Mac on the same network</text>
+<rect x="50" y="150" width="710" height="280" rx="22" fill="none" stroke="#243247" stroke-dasharray="3 7"/><text x="72" y="184" font-size="22" class="m" text-anchor="start" >The PC being viewed</text><rect x="960" y="150" width="510" height="280" rx="22" fill="none" stroke="#243247" stroke-dasharray="3 7"/><text x="982" y="184" font-size="22" class="m" text-anchor="start" >The computer you are using</text>
+<text x="860" y="258" font-size="21" class="m" text-anchor="middle" >network</text>
+<rect x="785" y="358" width="150" height="40" rx="20" fill="#16301f" stroke="#2c5a3d"/><text x="860" y="386" font-size="22" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">&#x2248; 4 ms</text>
+<rect x="75" y="214" width="145" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="147.5" y="266" font-size="29" class="t" text-anchor="middle" >Screen</text>
+<text x="147.5" y="302" font-size="20" class="m" text-anchor="middle" >what changed</text>
+
+<rect x="245" y="214" width="145" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="317.5" y="266" font-size="29" class="t" text-anchor="middle" >Capture</text>
+<text x="317.5" y="302" font-size="20" class="m" text-anchor="middle" >from Windows</text>
+<rect x="247.5" y="358" width="140" height="40" rx="20" fill="#16301f" stroke="#2c5a3d"/><text x="317.5" y="386" font-size="22" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">&#x2248; 1 ms</text>
+<rect x="415" y="214" width="145" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="487.5" y="266" font-size="29" class="t" text-anchor="middle" >Compress</text>
+<text x="487.5" y="302" font-size="20" class="m" text-anchor="middle" >graphics card</text>
+<rect x="417.5" y="358" width="140" height="40" rx="20" fill="#16301f" stroke="#2c5a3d"/><text x="487.5" y="386" font-size="22" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">&#x2248; 5 ms</text>
+<rect x="585" y="214" width="145" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="657.5" y="266" font-size="29" class="t" text-anchor="middle" >Packets</text>
+<text x="657.5" y="302" font-size="20" class="m" text-anchor="middle" >cut to fit</text>
+
+<rect x="985" y="214" width="200" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="1085" y="266" font-size="29" class="t" text-anchor="middle" >Decode</text>
+<text x="1085" y="302" font-size="20" class="m" text-anchor="middle" >on this chip</text>
+<rect x="1015" y="358" width="140" height="40" rx="20" fill="#16301f" stroke="#2c5a3d"/><text x="1085" y="386" font-size="22" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">&#x2248; 2.5 ms</text>
+<rect x="1245" y="214" width="200" height="124" rx="16" fill="#152033" stroke="#2a3a52"/>
+<text x="1345" y="266" font-size="29" class="t" text-anchor="middle" >Your screen</text>
+<text x="1345" y="302" font-size="20" class="m" text-anchor="middle" >drawn at once</text>
+<rect x="1275" y="358" width="140" height="40" rx="20" fill="#16301f" stroke="#2c5a3d"/><text x="1345" y="386" font-size="22" class="t" text-anchor="middle" fill="#5fd39a" font-weight="600">&#x2248; 2 ms</text>
+<path d="M220 276 H245 M390 276 H415 M560 276 H585 M730 276 H985 M1185 276 H1245" stroke="#9aa8b6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" opacity="0.6"/>
+<g><rect x="-17" y="-11" width="34" height="22" rx="5" fill="#7aa7ff"/><rect x="-11" y="-5" width="22" height="3" rx="1.5" fill="#dbe6ff"/><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.4;1" calcMode="linear" path="M147 276 H490"/><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.38;0.4;1" dur="5s" repeatCount="indefinite"/></g><circle r="7" fill="#5fd39a"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.400;0.740;1" calcMode="linear" path="M500 276 H1085"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.400;0.410;0.730;0.740;1" dur="5s" repeatCount="indefinite"/></circle>
+<circle r="7" fill="#5fd39a"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.420;0.760;1" calcMode="linear" path="M500 276 H1085"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.420;0.430;0.750;0.760;1" dur="5s" repeatCount="indefinite"/></circle>
+<circle r="7" fill="#5fd39a"><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.440;0.780;1" calcMode="linear" path="M500 276 H1085"/><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.440;0.450;0.770;0.780;1" dur="5s" repeatCount="indefinite"/></circle><g><rect x="-17" y="-11" width="34" height="22" rx="5" fill="#7aa7ff"/><rect x="-11" y="-5" width="22" height="3" rx="1.5" fill="#dbe6ff"/><animateMotion dur="5s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.76;0.96;1" calcMode="linear" path="M1085 276 H1345"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.75;0.77;0.96;1" dur="5s" repeatCount="indefinite"/></g>
+<path d="M1345 440 V490 H147 V440" stroke="#9aa8b6" stroke-width="2.5" fill="none" stroke-dasharray="6 7" marker-end="url(#arrow)" opacity="0.7"/>
+<circle r="7" fill="#f1b95a"><animateMotion dur="3.4s" repeatCount="indefinite" path="M1345 490 H147"/></circle>
+<text x="760" y="545" font-size="25" class="t" text-anchor="middle" fill="#f1b95a" font-weight="600">Your clicks and mouse moves go back the other way, in about 4 ms</text>
+<text x="760" y="583" font-size="22" class="m" text-anchor="middle" >The pointer you see is your own, so it never waits for the other computer.</text>
+</svg>
