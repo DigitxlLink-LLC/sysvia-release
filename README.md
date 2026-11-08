@@ -15,8 +15,6 @@
 &nbsp;·&nbsp;
 <a href="#new-in-233">New in 2.3.3</a>
 &nbsp;·&nbsp;
-<a href="#remote-screen-and-extended-monitors">Remote screen</a>
-&nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
 <a href="#how-it-works">How it works</a>
@@ -63,47 +61,6 @@
 Also in 2.3.3: the remote screen window closes on **Disconnect**, leaving it with Command or Alt held no longer taps that key on the other computer, **Control+Alt+D** goes in and out of the remote screen, and **Control+Alt+S** shows Sysvia. The full list is in the [2.3.3 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.3).
 
 **Since 2.3.0:** *2.3.1* added a better bar for when someone is looking at your screen, and extended monitors you can start from either computer. *2.3.2* keeps your computers reachable, lets you wake a sleeping computer from another one, and made remote screens hold up better on slow internet.
-
-## New in 2.3.0
-
-**A free plan.** Use Sysvia without a license on up to 2 computers, with every feature that works directly between them and 2 GB of relay a month. Workspaces now update on all your computers as soon as one changes them, and Overview shows every computer you have saved. The full list is under [2.3.0](#230) in What's new.
-
-## New in 2.2.0
-
-**The biggest update since 2.0.** Easier to set up, plainer to read, and much harder to attack.
-
-| | |
-| --- | --- |
-| **Remote screen** | See and use another computer's screen from yours, with its pointer drawn. Off until the person at that computer allows it, and a bar shows whenever someone is looking. |
-| **Extended monitors** | Another computer's monitors become extra screens on this one, with no cable, in both directions: a Mac can lend its monitors to a PC, and a PC to a Mac. |
-| **Workspaces, in plain words** | A workspace is a group of your computers that work together. No blocking first screen: the first computer you add starts **My computers**, and the next ones join it. |
-| **Notifications, per computer** | Choose which of your computers pop up alerts, with three simple settings: **Everything**, **Important only** or **Off**. |
-| **Add a computer in one step** | A Device ID, a name and a workspace. Everything else is under **More options**. |
-| **Connect from anywhere** | Off by default. Computers on different networks find each other, with no router changes. |
-| **A safer Sysvia** | Only computers you added can reach your keyboard and mouse, and Sysvia's background services answer only to the app. |
-| **Clearer and more private** | **Desk** is now **Input sharing**, and network addresses show as dots until you click them. |
-
-> [!IMPORTANT]
-> **Update every computer on a desk.** Keyboard and mouse sharing is stricter in 2.2.0, and a desk works best when all of its computers run the same version. Paired computers stay paired. The full list is under [2.2.0](#220) in What's new.
-
-## Remote screen and extended monitors
-
-Two new ways to use another one of your computers, from the **Remote** page in the sidebar. Both are off until the person at that computer turns them on.
-
-| | |
-| --- | --- |
-| **Remote screen** | See and use another computer's screen from yours. Every screen of that computer shows, full screen or at actual size, with its pointer drawn, and you can type and click on it if you were allowed to. Open it from a computer's card with **See screen**, or with `Ctrl+Alt+D` (`Control+Option+D` on a Mac). |
-| **Extended monitors** | Another computer's monitors become extra screens on this one, with no cable, in both directions. Drag windows between your own screens and the added ones, which are placed the way your **Desk layout** places the computers. Start it from a computer's card with **Add its monitors**, or lend yours with **Lend my monitors**. `Ctrl+Alt+1` (`Control+Option+1` on a Mac) flips the keyboard and mouse between the two computers. |
-
-**You stay in charge.** Nothing is shared until the person at a computer turns it on, then chooses which of their other computers may look and which may take control, and can be asked each time. A bar across the top of the screen shows whenever someone is looking or controlling, with a **Stop** button, and turning extended monitors off ends the session. The **Remote** page lists recent activity: who looked at or controlled this screen, and for how long.
-
-**The Remote page** asks what you want to do and with which computer, then walks you through the steps. **Set it up for me** does every step Sysvia can and says what only the other computer can do. Beside it you see what is on right now, your screens drawn to one scale and your shortcuts. The **Advanced** view has every control.
-
-**What you need**
-
-- Both computers paired, with Sysvia open. On one network it works straight away. Between networks, turn on **Connect from anywhere** on both.
-- On a Mac whose screen is shared, allow **Screen Recording** (and **Accessibility**, to let someone control it) when macOS asks. Only the person at the Mac can do this, so the first session needs someone there.
-- A Windows PC that lends its monitors needs a virtual display driver, installed once from the Remote page with administrator permission (Windows 11, 64-bit). A Mac lends monitors with nothing to install.
 
 ## What it does
 
@@ -296,7 +253,7 @@ The biggest update since 2.0. You can now see and use another computer's screen,
 
 **Extended monitors.** Another computer's monitors become extra screens on this one, with no cable, in both directions: a Mac can lend its monitors to a PC, and a Windows PC can lend its monitors to a Mac. Drag windows between your own screens and the added ones. The added screens are placed the way your **Desk layout** places the computers. Start it with **Add its monitors** on a computer's card, or lend yours with **Lend my monitors**. `Ctrl+Alt+1` (`Control+Option+1` on a Mac) flips the keyboard and mouse between the two computers, and turning it off ends the session. It is off unless the person at the computer that lends its monitors allows it. A Windows PC needs a virtual display driver for this, installed once from the Remote page with administrator permission (Windows 11, 64-bit). A Mac needs nothing installed.
 
-**The Remote page.** It asks what you want to do and with which computer, then walks you through the steps. **Set it up for me** does every step Sysvia can and says what only the other computer can do. Beside it you see what is on right now, recent activity (who looked at or controlled this screen, and for how long), your screens drawn to one scale and your shortcuts. The **Advanced** view has every control. See [Remote screen and extended monitors](#remote-screen-and-extended-monitors).
+**The Remote page.** It asks what you want to do and with which computer, then walks you through the steps. **Set it up for me** does every step Sysvia can and says what only the other computer can do. Beside it you see what is on right now, recent activity (who looked at or controlled this screen, and for how long), your screens drawn to one scale and your shortcuts. The **Advanced** view has every control.
 
 **Workspaces, in plain words.** A workspace is a group of your computers that work together, like "Home office": a desktop and a laptop. The blocking "Create a workspace" screen is gone. You go straight into the setup tour, the first computer you add starts a workspace called **My computers**, and the next ones join it. When you add a computer you choose which workspace it joins, or start a new one. **Park** and **Activate** are now **Hide** and **Show**, which decide whether a workspace appears in Overview on this computer. An empty Overview says "Connect your first computer" and has an **Add a computer** button. The tour has two new steps: what a workspace is, and where notifications show.
 
@@ -453,7 +410,7 @@ These work from anywhere on the computer, even while a game or another app is in
 | `Ctrl+Alt+Esc` | Take the pointer back if it sticks on the other computer. On a Mac: `Control+Option+Esc`. Built in, so it always works, and it cannot be changed. |
 | `Ctrl+Alt+G` | Turn game mode on or off. On a Mac: `Control+Option+G`. |
 | `Ctrl+Alt+2` | Show the other computer's primary display on this monitor. Press it again or `Esc` to close. On a Mac: `Control+Option+2`. |
-| `Ctrl+Alt+D` | Open [remote screen](#remote-screen-and-extended-monitors) to another of your computers. On a Mac: `Control+Option+D`. |
+| `Ctrl+Alt+D` | Open remote screen to another of your computers. On a Mac: `Control+Option+D`. |
 | `Ctrl+Alt+1` | While another computer's monitors are added to yours, flip the keyboard and mouse between this computer and that one. On a Mac: `Control+Option+1`. |
 | Not set | Bring the Sysvia window to the front. Choose your own keys for it. |
 
@@ -469,7 +426,7 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 - **Local Network** must be allowed so Sysvia can find your other computers.
 - **Accessibility** must be on for Sysvia and for `sysviad`. Restart after granting it.
 - **Screen Recording** must be on for `sysviad` on any Mac whose screen you view from another computer.
-- For [remote screen](#remote-screen-and-extended-monitors) macOS also asks about **Screen Recording** and **Accessibility** the first time someone looks at, or controls, this Mac. Allow the entries named Sysvia. Only the person at the Mac can do this.
+- For remote screen macOS also asks about **Screen Recording** and **Accessibility** the first time someone looks at, or controls, this Mac. Allow the entries named Sysvia. Only the person at the Mac can do this.
 - **Notifications** should be allowed if you want [desktop alerts](#notifications).
 
 </details>
