@@ -11,9 +11,9 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.3.3</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.3.5</b></a>
 &nbsp;·&nbsp;
-<a href="#new-in-233">New in 2.3.3</a>
+<a href="#new-in-235">New in 2.3.5</a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
@@ -36,31 +36,23 @@
 <a href="#reference">Reference</a>
 </p>
 
-## New in 2.3.3
-
-**A much smoother remote screen from a Windows PC, drawn by Sysvia's own screen engine.** It takes each picture straight from Windows, compresses it on your graphics card and sends it without the browser in between. In our tests, on a Windows PC with an NVIDIA graphics card, it streamed **2560x1440 at up to 140 frames a second**, where the browser's capture gave 5 to 30.
+## New in 2.3.5
 
 <p align="center">
-<img src="media/release-2.3.3-smoother.svg" alt="The usual capture shows a moving window in visible jumps; Sysvia's own screen engine shows it moving smoothly, with many more pictures a second" width="100%">
+<img src="media/release-2.3.5-banner.jpg" alt="Sysvia 2.3.5: extend your desk, from any computer" width="100%">
 </p>
 
-**Turn it on** in **Settings, General, Faster screen sharing**, then restart Sysvia. After you have watched a PC with an NVIDIA graphics card for a while without seeing a fast picture, Sysvia offers it once. It is off by default, and Macs keep using their own engine.
+**Extended monitors now work with a Windows PC on either end, a Mac sends a quicker picture, and a handful of things are fixed.**
 
-**It checks itself.** When it is on, the engine first tries its own capture for a moment. If it cannot produce pictures fast enough on that PC, the usual capture shares the screen instead, with nothing for you to do.
+**A Windows PC can lend its monitors.** A PC with **Faster screen sharing** on could not have another computer add screens to it before; it can now. On the PC, **Remote, Let other computers add screens to this PC** installs the free Virtual Display Driver once, with your permission. On the other computer, ask for the screens as usual. Each new screen is taken straight from Windows and compressed on your graphics card, like a real monitor, and closing the session removes the extra screens from the PC. Screens added beside a computer's own now sit centred on its edge, so the whole edge lets the pointer through.
 
-<p align="center">
-<img src="media/release-2.3.3-checks-itself.svg" alt="The engine tries its own capture once. If it works it is used; if not, the usual capture takes over" width="100%">
-</p>
+**A quicker screen from a Mac.** A Mac now spends much less time compressing each picture when it shares its screen or lends it as an extended monitor, so the screen follows your mouse instead of trailing it. It is a choice: **Settings, General, Speed over sharpness** is on by default, and you can turn it off if you share mostly still documents and want the sharpest fine text. It takes effect after Sysvia restarts, and only a Mac shows it.
 
-**How a picture travels.** Taking, compressing, sending, decoding and drawing a picture adds up to a few milliseconds at each step. The pointer you see is your own, so it never waits for the other computer.
+**Smaller fixes.** The sharing bar opens with a plain click while someone is controlling this computer, where it used to need a right click, and the diagnostic log says more about a screen that lags.
 
-<p align="center">
-<img src="media/release-2.3.3-pipeline.svg" alt="A picture is captured on the PC, compressed on its graphics card, sent over the network, decoded on the other computer and drawn" width="100%">
-</p>
+**Good to know.** Both computers need the new version: after installing, quit Sysvia fully so an old copy is not left running. A Windows PC needs an NVIDIA graphics card for the fast path; without one, extended monitors from a PC use the usual capture. The full list is in the [2.3.5 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.5).
 
-Also in 2.3.3: the remote screen window closes on **Disconnect**, leaving it with Command or Alt held no longer taps that key on the other computer, **Control+Alt+D** goes in and out of the remote screen, and **Control+Alt+S** shows Sysvia. The full list is in the [2.3.3 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.3).
-
-**Since 2.3.0:** *2.3.1* added a better bar for when someone is looking at your screen, and extended monitors you can start from either computer. *2.3.2* keeps your computers reachable, lets you wake a sleeping computer from another one, and made remote screens hold up better on slow internet.
+**Since 2.3.0:** *2.3.1* added a better bar for when someone is looking at your screen, and extended monitors you can start from either computer. *2.3.2* keeps your computers reachable, lets you wake a sleeping computer from another one, and made remote screens hold up better on slow internet. *2.3.3* made a remote screen from a Windows PC much smoother with Sysvia's own screen engine (**Settings, General, Faster screen sharing**). *2.3.4* made connections across different networks faster, added five colour themes, and brought every language up to date.
 
 ## What it does
 
@@ -153,9 +145,9 @@ Download the installer for your computer from the [latest release](https://githu
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.3.3-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.3.3-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.3.3-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.3.5-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.3.5-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.3.5-mac-x64.dmg` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
@@ -172,12 +164,12 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.3.3-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.3.5-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.3.3-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.3.5-*.dmg
 ```
 
 </details>
@@ -227,6 +219,21 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.3.5
+
+- **Extended monitors from a Windows PC.** A PC with **Faster screen sharing** on can now have another computer add screens to it. **Remote, Let other computers add screens to this PC** installs the free Virtual Display Driver once, with your permission. Each new screen is compressed on your graphics card; if that cannot work, the usual capture takes over for the session. The extra screens sit centred on the other computer's edge and are removed when the session closes.
+- **A quicker screen from a Mac.** Pictures spend much less time being compressed, so the screen follows your mouse. **Settings, General, Speed over sharpness** is on by default; turn it off for the sharpest fine text on still documents. Applies after a restart; only a Mac shows it.
+- The sharing bar opens with a plain click while someone is controlling this computer.
+- The diagnostic log says more about a screen that lags, on both computers.
+- Both computers need the new version; quit Sysvia fully after installing.
+
+### 2.3.4
+
+- **Faster connections between computers on different networks.** Sysvia starts reaching out within seconds of launch, a remote screen waits at most a few seconds for a direct path before using the backup route, and a connection that goes quiet is noticed sooner, including over a phone hotspot.
+- **Five new colour themes** in **Settings, Appearance**: Sage, Sky, Graphite, Forest and Dusk, beside Dark and Light.
+- **A Windows screen capture that stops by itself** is started again with the screen as it is now.
+- **Every language is up to date.** French, Portuguese and Korean were still mostly English; all nine now have every string.
 
 ### 2.3.3
 
