@@ -2,11 +2,6 @@ name: Announce release on Discord
 on:
   release:
     types: [published]   # fires when a draft is published, not when it is created
-  workflow_dispatch:     # TEMPORARY: manual test
-    inputs:
-      message:
-        description: Test message
-        required: true
 
 jobs:
   announce:
@@ -19,12 +14,7 @@ jobs:
           URL: ${{ github.event.release.html_url }}
           PRE: ${{ github.event.release.prerelease }}
           BODY: ${{ github.event.release.body }}
-          TEST: ${{ github.event.inputs.message }}
         run: |
-          if [ -n "$TEST" ]; then
-            jq -n --arg c "$TEST" '{content:$c}' | curl -sS -f -H 'Content-Type: application/json' -d @- "$WEBHOOK"
-            exit 0
-          fi
           [ "$PRE" = "true" ] && exit 0   # skip pre-releases
           jq -n --arg title "Sysvia $NAME is out" --arg url "$URL" --arg body "${BODY:0:1500}" \
             '{embeds:[{title:$title,url:$url,description:$body,color:5793266}]}' \
