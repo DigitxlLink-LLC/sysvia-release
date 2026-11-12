@@ -11,9 +11,9 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.3.5</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.3.6</b></a>
 &nbsp;·&nbsp;
-<a href="#new-in-235">New in 2.3.5</a>
+<a href="#new-in-236">New in 2.3.6</a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
 &nbsp;·&nbsp;
@@ -36,23 +36,25 @@
 <a href="#reference">Reference</a>
 </p>
 
-## New in 2.3.5
+## New in 2.3.6
 
 <p align="center">
-<img src="media/release-2.3.5-banner.jpg" alt="Sysvia 2.3.5: extend your desk, from any computer" width="100%">
+<img src="media/release-2.3.6-banner.jpg" alt="Sysvia 2.3.6: your desk, one shortcut" width="100%">
 </p>
 
-**Extended monitors now work with a Windows PC on either end, a Mac sends a quicker picture, and a handful of things are fixed.**
+**One shortcut to switch your monitors between computers, shortcuts you can change again, calmer screen controls, and the Sysvia Discord.**
 
-**A Windows PC can lend its monitors.** A PC with **Faster screen sharing** on could not have another computer add screens to it before; it can now. On the PC, **Remote, Let other computers add screens to this PC** installs the free Virtual Display Driver once, with your permission. On the other computer, ask for the screens as usual. Each new screen is taken straight from Windows and compressed on your graphics card, like a real monitor, and closing the session removes the extra screens from the PC. Screens added beside a computer's own now sit centred on its edge, so the whole edge lets the pointer through.
+**Your monitors, one shortcut.** While this computer lends its monitors to another one, **Ctrl + Alt + 3** shows its own desktop again. Press it again to return to the other computer's screens, right where you left them. The connection stays open. While your own desktop is showing, your keyboard and mouse stay with it. Change the keys in **Settings, Shortcuts**.
 
-**A quicker screen from a Mac.** A Mac now spends much less time compressing each picture when it shares its screen or lends it as an extended monitor, so the screen follows your mouse instead of trailing it. It is a choice: **Settings, General, Speed over sharpness** is on by default, and you can turn it off if you share mostly still documents and want the sharpest fine text. It takes effect after Sysvia restarts, and only a Mac shows it.
+**Shortcuts work again, with a new confirmation.** Click a shortcut in Settings and press the keys you want. Sysvia records them on Mac and Windows and explains when they are already taken. Its new confirmation is a quiet status card with an icon, the Sysvia name and the result. The sharing and remote-screen docks also have a new look; hover over the sharing bar to open it.
 
-**Smaller fixes.** The sharing bar opens with a plain click while someone is controlling this computer, where it used to need a right click, and the diagnostic log says more about a screen that lags.
+**Adding computers is more careful.** A computer outside your account waits for you to accept it. When another computer starts using this one's keyboard and mouse, a message names it and reminds you that **Ctrl + Alt + Esc** takes them back. Extended monitors run in one direction at a time, and a Mac no longer offers screens added by Sysvia as monitors to lend back.
 
-**Good to know.** Both computers need the new version: after installing, quit Sysvia fully so an old copy is not left running. A Windows PC needs an NVIDIA graphics card for the fast path; without one, extended monitors from a PC use the usual capture. The full list is in the [2.3.5 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.5).
+**Join the conversation.** Ask questions, report problems and share your desk in the [Sysvia Discord](https://discord.gg/CjT8cNeh5h).
 
-**Since 2.3.0:** *2.3.1* added a better bar for when someone is looking at your screen, and extended monitors you can start from either computer. *2.3.2* keeps your computers reachable, lets you wake a sleeping computer from another one, and made remote screens hold up better on slow internet. *2.3.3* made a remote screen from a Windows PC much smoother with Sysvia's own screen engine (**Settings, General, Faster screen sharing**). *2.3.4* made connections across different networks faster, added five colour themes, and brought every language up to date.
+Both computers need the new version; quit Sysvia fully after installing. The full list is in the [2.3.6 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.6).
+
+**Since 2.3.0:** *2.3.1* added a sharing bar and extended monitors you can start from either computer. *2.3.2* improved reachability, wake and remote screens. *2.3.3* added the faster Windows screen engine. *2.3.4* improved connections across networks and added five themes. *2.3.5* enabled extended monitors from a Windows PC and made Mac screen encoding quicker.
 
 ## What it does
 
@@ -164,7 +166,7 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.3.5-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.3.6-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
@@ -219,6 +221,14 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 If an old copy of Syncthing is still running on a computer, quit it first. It can hold the port Sysvia needs.
 
 ## What's new
+
+### 2.3.6
+
+- **Switch lent monitors with Ctrl + Alt + 3.** Your own desktop and the other computer's screens take turns on the same monitors while the connection stays open.
+- **Shortcut recording works again**, and shortcut results use a new status card. Sharing and remote-screen docks have a new look; the sharing bar opens on hover.
+- **New computers wait for acceptance** unless they are on your account. A message names another computer when it starts using this one's keyboard and mouse.
+- **Extended monitors run in one direction at a time.** Screens added by Sysvia on a Mac are not offered to lend back.
+- Join the [Sysvia Discord](https://discord.gg/CjT8cNeh5h). Both computers need the new version; quit Sysvia fully after installing.
 
 ### 2.3.5
 
@@ -419,11 +429,16 @@ These work from anywhere on the computer, even while a game or another app is in
 | `Ctrl+Alt+2` | Show the other computer's primary display on this monitor. Press it again or `Esc` to close. On a Mac: `Control+Option+2`. |
 | `Ctrl+Alt+D` | Open remote screen to another of your computers. On a Mac: `Control+Option+D`. |
 | `Ctrl+Alt+1` | While another computer's monitors are added to yours, flip the keyboard and mouse between this computer and that one. On a Mac: `Control+Option+1`. |
-| Not set | Bring the Sysvia window to the front. Choose your own keys for it. |
+| `Ctrl+Alt+3` | Switch lent monitors between this computer and the other computer’s desktop. |
+| `Ctrl+Alt+S` | Bring the Sysvia window to the front. |
 
 Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 
 **Game mode** is for the computer that is sharing its keyboard and mouse (the host). While it is on, the pointer no longer crosses to another computer and your input stays on this one. Turn it on from the **Input sharing** page or with `Ctrl+Alt+G`. It always starts off when Sysvia launches and turns itself off if you stop hosting. On Windows it also holds the cursor on the monitor your game is on. Taking the keyboard back with `Ctrl+Alt+Esc` releases it.
+
+**Shortcut confirmation in 2.3.6.** An icon, the Sysvia name and a clear status appear briefly over your apps. Turn confirmations off under **Settings, Shortcuts**.
+
+<img src="media/release-2.3.6-shortcut-confirmation.svg?rev=64edac5" alt="The v2.3.6 Game mode status card with its icon, Sysvia name and on/off messages" width="100%">
 
 <details>
 <summary id="macos-permissions">macOS permissions</summary>
