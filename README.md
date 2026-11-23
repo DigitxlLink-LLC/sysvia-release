@@ -36,6 +36,44 @@
 
 ## See it in action
 
+The animations from [getsysvia.com](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase), here in the repository. Watch the full walkthrough, or explore the short homepage demos below.
+
+### The full walkthrough
+
+<a href="media/showcase/walkthrough.mp4"><img src="media/showcase/walkthrough-poster.webp" alt="Sysvia walkthrough preview: a Windows desktop, MacBook and work laptop sharing one workspace. Select to watch the full video." width="100%"></a>
+
+[Watch the 60-second walkthrough (MP4)](media/showcase/walkthrough.mp4) · [Play it on the website](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase)
+
+### One keyboard and mouse across your desk
+
+Move between independent Windows and Mac desktops, with the same keyboard and mouse. The homepage animation follows the pointer across the screens and magnifies the typing as it goes.
+
+<a href="media/showcase/keyboard-mouse.mp4"><img src="media/showcase/keyboard-mouse.gif" alt="Homepage animation: one pointer crosses two Windows displays and a MacBook, typing into each with the same keyboard." width="100%"></a>
+
+[Watch the keyboard and mouse animation (MP4)](media/showcase/keyboard-mouse.mp4)
+
+### Reach another computer’s screen
+
+The remote-screen card moves from a Mac desktop at a café to a Windows PC, then returns to the Mac.
+
+<a href="media/showcase/remote-screen.mp4"><img src="media/showcase/remote-screen.gif" alt="Homepage animation: a laptop at a café switches from a Mac screen to a remote Windows desktop and back." width="100%"></a>
+
+[Watch the remote-screen animation (MP4)](media/showcase/remote-screen.mp4)
+
+### Give your desktop more room
+
+The extended-monitor animation moves one app window across the MacBook, a borrowed PC monitor and a work laptop. The screens are viewports into the same desktop.
+
+<a href="media/showcase/extended-monitors.mp4"><img src="media/showcase/extended-monitors.gif" alt="Homepage animation: one Mac app window crosses from a MacBook screen onto a borrowed PC monitor and a work laptop on the same desk." width="100%"></a>
+
+[Watch the extended-monitor animation (MP4)](media/showcase/extended-monitors.mp4) · [Try the interactive homepage demos](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase#features)
+
+These are scripted website demonstrations with sample computers and screen content, not recordings of live connections or measured transfer performance. The clips use Windows and macOS example screens. [Media sources and reproduction](media/showcase/README.md).
+
+<details>
+<summary>More from the walkthrough: files, clipboard and screens</summary>
+
+
 Five short clips from the walkthrough on [getsysvia.com](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo): a Windows PC, a MacBook and a work laptop on one desk. They show Sysvia's real screens with sample computers and files. The connections and transfers are scripted for the demo, not recorded from live sessions.
 
 **File sharing.** Share a folder from your PC and it is ready on your Mac.
@@ -59,6 +97,8 @@ Five short clips from the walkthrough on [getsysvia.com](https://getsysvia.com/?
 <img src="media/demo-extended-displays.gif" alt="Demo clip: a Mac's screen extended onto a Windows PC's monitors. Sample data." width="100%">
 
 [Watch the full 60-second walkthrough](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo) on the website.
+
+</details>
 
 ## What it does
 

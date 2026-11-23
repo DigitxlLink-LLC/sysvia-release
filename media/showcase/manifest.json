@@ -1,0 +1,59 @@
+{
+  "source": "https://getsysvia.com/",
+  "websiteCommit": "49b4b5883d3ff8755a9c5edde4bd020476f480a6",
+  "capturedAt": "2026-11-23T22:14:09.552Z",
+  "fps": 30,
+  "note": "Scripted website product illustrations; no live multi-computer sessions.",
+  "clips": [
+    {
+      "slug": "keyboard-mouse",
+      "selector": "[data-feature-art=\"kvm\"]",
+      "timeline": "kvm-work-demo",
+      "seconds": 16.4,
+      "title": "One keyboard and mouse across your desk",
+      "width": 960,
+      "height": 728,
+      "frames": 492,
+      "videoBytes": 977982,
+      "videoSha256": "856d3d755cf5e984121bf551a6d87881d2ce1577eeda914d5c6644f85d60af14",
+      "gifBytes": 1847672,
+      "gifSha256": "6c7fe48093c1bc4d3985014a56415685738c47e9db167c7b7ca088065160b673"
+    },
+    {
+      "slug": "remote-screen",
+      "selector": "[data-feature-art=\"remote\"]",
+      "timeline": "remote-work-demo",
+      "seconds": 14,
+      "title": "Reach another computer’s screen",
+      "width": 960,
+      "height": 828,
+      "frames": 420,
+      "videoBytes": 1394989,
+      "videoSha256": "11213c27f811c446ce5d107389b344088ee66e7b62a2c2ee9fb408b4cc2b376c",
+      "gifBytes": 2774991,
+      "gifSha256": "acb398a51f42045a6a1fb16f7c56605a9ffefe937e3e94a295630088dfa9941f"
+    },
+    {
+      "slug": "extended-monitors",
+      "selector": ".monitor-preview",
+      "seconds": 24,
+      "title": "Give your desktop more room",
+      "width": 960,
+      "height": 552,
+      "frames": 720,
+      "videoBytes": 1675533,
+      "videoSha256": "50ebe6f1a50ffce1107b789cf3de27bb8ea22b73e566f51084ea0fff6317d68d",
+      "gifBytes": 3168537,
+      "gifSha256": "5d02c70527f544975c878ed12159ef84d5cd8cd26b4a5fb30e00f07bafd014fb"
+    }
+  ],
+  "walkthrough": {
+    "source": "sitev2/assets/hero-walkthrough/walkthrough-mobile.mp4",
+    "seconds": 60.7,
+    "width": 960,
+    "height": 540,
+    "sha256": "51bb373be41202e9d6f71d39fe8dbe7334dfe2d3a6fbed8e05bbcce394fb5021"
+  },
+  "gifFps": 8,
+  "gifWidth": 640
+}
