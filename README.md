@@ -38,65 +38,82 @@
 
 The animations from [getsysvia.com](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase), here in the repository. Watch the full walkthrough, or explore the short homepage demos below.
 
-### The full walkthrough
-
-<a href="media/showcase/walkthrough.mp4"><img src="media/showcase/walkthrough-poster.webp" alt="Sysvia walkthrough preview: a Windows desktop, MacBook and work laptop sharing one workspace. Select to watch the full video." width="100%"></a>
-
-[Watch the 60-second walkthrough (MP4)](media/showcase/walkthrough.mp4) · [Play it on the website](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase)
-
-### One keyboard and mouse across your desk
-
-Move between independent Windows and Mac desktops, with the same keyboard and mouse. The homepage animation follows the pointer across the screens and magnifies the typing as it goes.
-
-<a href="media/showcase/keyboard-mouse.mp4"><img src="media/showcase/keyboard-mouse.gif" alt="Homepage animation: one pointer crosses two Windows displays and a MacBook, typing into each with the same keyboard." width="100%"></a>
-
-[Watch the keyboard and mouse animation (MP4)](media/showcase/keyboard-mouse.mp4)
-
-### Reach another computer’s screen
-
-The remote-screen card moves from a Mac desktop at a café to a Windows PC, then returns to the Mac.
-
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3>The full walkthrough</h3>
+<a href="media/showcase/walkthrough.mp4"><img src="media/showcase/walkthrough-poster.webp" alt="Sysvia walkthrough preview with a Windows desktop, MacBook and work laptop. Select to watch the full video." width="100%"></a>
+<p>See file sharing, keyboard and mouse, clipboard, remote screens and extended monitors in the 60-second walkthrough.</p>
+<p><a href="media/showcase/walkthrough.mp4">Watch MP4</a> · <a href="https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase">Play on website</a></p>
+</td>
+<td width="50%" valign="top">
+<h3>Keyboard &amp; mouse</h3>
+<a href="media/showcase/keyboard-mouse.mp4"><img src="media/showcase/keyboard-mouse.gif" alt="Homepage animation: one pointer crosses two Windows displays and a MacBook, typing with the same keyboard." width="100%"></a>
+<p>One keyboard and mouse across independent desktops, with the pointer, magnifier and typing shown together.</p>
+<p><a href="media/showcase/keyboard-mouse.mp4">Watch MP4</a></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Remote screen</h3>
 <a href="media/showcase/remote-screen.mp4"><img src="media/showcase/remote-screen.gif" alt="Homepage animation: a laptop at a café switches from a Mac screen to a remote Windows desktop and back." width="100%"></a>
-
-[Watch the remote-screen animation (MP4)](media/showcase/remote-screen.mp4)
-
-### Give your desktop more room
-
-The extended-monitor animation moves one app window across the MacBook, a borrowed PC monitor and a work laptop. The screens are viewports into the same desktop.
-
-<a href="media/showcase/extended-monitors.mp4"><img src="media/showcase/extended-monitors.gif" alt="Homepage animation: one Mac app window crosses from a MacBook screen onto a borrowed PC monitor and a work laptop on the same desk." width="100%"></a>
-
-[Watch the extended-monitor animation (MP4)](media/showcase/extended-monitors.mp4) · [Try the interactive homepage demos](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase#features)
+<p>Move from a Mac at a café to a Windows PC, then return to the Mac.</p>
+<p><a href="media/showcase/remote-screen.mp4">Watch MP4</a></p>
+</td>
+<td width="50%" valign="top">
+<h3>Extended monitors</h3>
+<a href="media/showcase/extended-monitors.mp4"><img src="media/showcase/extended-monitors.gif" alt="Homepage animation: a Mac app window crosses the MacBook, a borrowed PC monitor and a work laptop." width="100%"></a>
+<p>Move one app window across the MacBook, a borrowed PC monitor and a work laptop: three viewports into the same desktop.</p>
+<p><a href="media/showcase/extended-monitors.mp4">Watch MP4</a> · <a href="https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=homepage-showcase#features">Try on website</a></p>
+</td>
+</tr>
+</table>
 
 These are scripted website demonstrations with sample computers and screen content, not recordings of live connections or measured transfer performance. The clips use Windows and macOS example screens. [Media sources and reproduction](media/showcase/README.md).
 
 <details>
 <summary>More from the walkthrough: files, clipboard and screens</summary>
 
+Five clips from the website walkthrough, with sample computers and files. Connections and transfers are scripted for the demo.
 
-Five short clips from the walkthrough on [getsysvia.com](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo): a Windows PC, a MacBook and a work laptop on one desk. They show Sysvia's real screens with sample computers and files. The connections and transfers are scripted for the demo, not recorded from live sessions.
-
-**File sharing.** Share a folder from your PC and it is ready on your Mac.
-
-<img src="media/demo-file-sharing.gif" alt="Demo clip: adding a shared folder in Sysvia on a Windows PC. Sample data." width="100%">
-
-**Keyboard and mouse.** Move past the edge of the screen and keep typing on the next computer.
-
-<img src="media/demo-keyboard-mouse.gif" alt="Demo clip: the pointer moving from a Windows monitor to a MacBook beside it. Sample data." width="100%">
-
-**Clipboard.** Copy text, images or a screenshot, then paste on the other computer.
-
-<img src="media/demo-clipboard.gif" alt="Demo clip: a screenshot copied on a Windows PC and pasted on a MacBook. Sample data." width="100%">
-
-**Remote screen.** Control your PC from your Mac.
-
-<img src="media/demo-remote-screen.gif" alt="Demo clip: a Mac showing and controlling a Windows PC's screen. Sample data." width="100%">
-
-**Extended displays.** Spread your Mac across your PC's monitors.
-
-<img src="media/demo-extended-displays.gif" alt="Demo clip: a Mac's screen extended onto a Windows PC's monitors. Sample data." width="100%">
-
-[Watch the full 60-second walkthrough](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo) on the website.
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3>File sharing</h3>
+<img src="media/demo-file-sharing.gif" alt="Walkthrough clip: adding a shared folder in Sysvia on a Windows PC. Sample data." width="100%">
+<p>Share a folder on your PC and make it available on your Mac.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Clipboard</h3>
+<img src="media/demo-clipboard.gif" alt="Walkthrough clip: a Windows screenshot copied and pasted on a MacBook. Sample data." width="100%">
+<p>Copy text, an image or a screenshot, then paste on another computer.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Keyboard &amp; mouse</h3>
+<img src="media/demo-keyboard-mouse.gif" alt="Walkthrough clip: the pointer moves from a Windows monitor to a MacBook. Sample data." width="100%">
+<p>Cross the screen edge and keep typing on the next computer.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Remote screen</h3>
+<img src="media/demo-remote-screen.gif" alt="Walkthrough clip: a Mac displays and controls a Windows PC screen. Sample data." width="100%">
+<p>Reach your PC screen from your Mac.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Extended displays</h3>
+<img src="media/demo-extended-displays.gif" alt="Walkthrough clip: a Mac desktop extends onto a Windows PC monitor. Sample data." width="100%">
+<p>Spread your Mac across your PC&rsquo;s monitors.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Watch the whole flow</h3>
+<p>See how the five features fit together in the full walkthrough, or explore the interactive homepage cards.</p>
+<p><a href="media/showcase/walkthrough.mp4">Watch the full MP4</a> · <a href="https://getsysvia.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=homepage-showcase#features">Try the homepage demos</a></p>
+</td>
+</tr>
+</table>
 
 </details>
 
@@ -164,16 +181,43 @@ Found a security problem? Please tell us first at support@getsysvia.com.
 
 ## Screens
 
-<p align="center">
-<img src="media/dashboard.png" alt="The Sysvia dashboard: shared folders, computers online, files waiting, transfer activity and recent sync activity." width="49%" align="top">
-<img src="media/folders.png" alt="The Folders page: every shared folder with its state and progress, and a detail panel with configuration and the computers it is shared with." width="49%" align="top">
-</p>
-
-<p align="center">
-<img src="media/computers.png" alt="The Computers page." width="32%" align="top">
-<img src="media/desk.png" alt="The Input sharing page, " width="32%" align="top">
-<img src="media/layout.png" alt="The desk layout editor." width="32%" align="top">
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3>Overview</h3>
+<img src="media/dashboard.png" alt="Sysvia Overview with shared folders, computers online, transfer activity and recent events." width="100%">
+<p>Your computers, folders and recent activity in one place.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Folders</h3>
+<img src="media/folders.png" alt="Sysvia Folders with sync status, progress and a detail panel for the selected folder." width="100%">
+<p>See sync progress and the computers sharing each folder.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Computers</h3>
+<img src="media/computers.png" alt="Sysvia Computers showing the devices connected to your account." width="100%">
+<p>Find and manage the computers in your workspace.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Input sharing</h3>
+<img src="media/desk.png" alt="Sysvia Input sharing page with desk connection controls and session information." width="100%">
+<p>Host a desk, join another computer and check your sessions.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Desk layout</h3>
+<img src="media/layout.png" alt="Sysvia Desk layout editor for arranging connected computers against screen edges." width="100%">
+</td>
+<td width="50%" valign="top">
+<h3>Make it match your desk</h3>
+<p>Place each computer beside the screen edge where it sits in real life, then apply the layout.</p>
+<p><a href="https://getsysvia.com/getting-started">Follow the setup guide</a></p>
+</td>
+</tr>
+</table>
 
 ## Install
 
