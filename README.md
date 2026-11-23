@@ -102,16 +102,6 @@ Five short clips from the walkthrough on [getsysvia.com](https://getsysvia.com/?
 
 ## What it does
 
-<p align="center">
-<img src="media/kvm.webp" alt="Software KVM. Move your cursor across screen edges and use one keyboard and mouse everywhere." width="49%" align="top">
-<img src="media/clipboard.webp" alt="Universal clipboard. Copy text on one computer and paste it on another." width="49%" align="top">
-</p>
-
-<p align="center">
-<img src="media/unified.webp" alt="One unified interface. Manage file sync and input sharing from one modern desktop shell." width="49%" align="top">
-<img src="media/lan.webp" alt="LAN-first privacy. Devices discover each other on your local network and traffic is TLS-encrypted." width="49%" align="top">
-</p>
-
 Sysvia keeps folders in sync between your computers and lets one keyboard and mouse control several of them. Nothing goes through a cloud service. Computers find each other on your network and talk directly.
 
 | | |
