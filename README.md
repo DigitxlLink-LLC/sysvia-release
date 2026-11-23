@@ -4,14 +4,14 @@
 
 <p align="center">
 <a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/DigitxlLink-LLC/sysvia-release?display_name=tag&style=flat-square&color=2bb5a0&label=release"></a>
-<img alt="Platforms: Windows and macOS" src="https://img.shields.io/badge/platforms-Windows%20%C2%B7%20macOS-1f2937?style=flat-square">
+<img alt="Platforms: Windows, macOS and Linux" src="https://img.shields.io/badge/platforms-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-1f2937?style=flat-square">
 <img alt="Peer to peer, no cloud" src="https://img.shields.io/badge/architecture-peer--to--peer-1f2937?style=flat-square">
 <img alt="TLS encrypted" src="https://img.shields.io/badge/transport-TLS-1f2937?style=flat-square">
 <img alt="Signed and notarized on macOS" src="https://img.shields.io/badge/macOS-signed%20%26%20notarized-1f2937?style=flat-square">
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.3.6</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.4.0</b></a>
 &nbsp;·&nbsp;
 <a href="#new-in-236">New in 2.3.6</a>
 &nbsp;·&nbsp;
@@ -143,17 +143,21 @@ Found a security problem? Please tell us first at support@getsysvia.com.
 
 ## Install
 
-Download the installer for your computer from the [latest release](https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest). A Linux installer is not available yet.
+Download the installer for your computer from the [latest release](https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest).
 
 | Computer | File |
 | --- | --- |
-| Windows (x64) | `Sysvia-2.3.5-win-x64.exe` |
-| Mac with Apple silicon (M1 and later) | `Sysvia-2.3.5-mac-arm64.dmg` |
-| Mac with an Intel processor | `Sysvia-2.3.5-mac-x64.dmg` |
+| Windows (x64) | `Sysvia-2.4.0-win-x64.exe` |
+| Mac with Apple silicon (M1 and later) | `Sysvia-2.4.0-mac-arm64.dmg` |
+| Mac with an Intel processor | `Sysvia-2.4.0-mac-x64.dmg` |
+| Linux, 64-bit (any distribution) | `Sysvia-2.4.0-linux-x86_64.AppImage` |
+| Linux, Debian or Ubuntu, 64-bit | `Sysvia-2.4.0-linux-amd64.deb` |
 
 **Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
 
 **macOS.** Open the `.dmg` and drag Sysvia into Applications. The app is signed and notarized by Apple. On first launch macOS asks for Local Network access, and keyboard and mouse sharing needs the permissions listed under [macOS permissions](#macos-permissions). Not sure which Mac you have? Apple menu, then About This Mac: "Chip" says Apple M1 or similar, "Processor" says Intel.
+
+**Linux.** For the AppImage, make it executable (`chmod +x Sysvia-2.4.0-linux-x86_64.AppImage`) and run it. For the `.deb`, install it with your package manager, for example `sudo apt install ./Sysvia-2.4.0-linux-amd64.deb`. Both are 64-bit builds. Keyboard and mouse sharing depends on your desktop session, and native Wayland input support is still in development.
 
 The app checks this repository for updates a few seconds after launch, every ten minutes while it is running, and when you come back to its window or wake the computer.
 
@@ -166,12 +170,17 @@ The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
 
 ```powershell
 # Windows
-Get-FileHash .\Sysvia-2.3.6-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Sysvia-2.4.0-win-x64.exe -Algorithm SHA256
 ```
 
 ```sh
 # macOS
-shasum -a 256 ~/Downloads/Sysvia-2.3.5-*.dmg
+shasum -a 256 ~/Downloads/Sysvia-2.4.0-*.dmg
+```
+
+```sh
+# Linux
+sha256sum ~/Downloads/Sysvia-2.4.0-linux-*
 ```
 
 </details>
@@ -456,7 +465,7 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 ## Current limits
 
 - Using a Mac as an extra monitor for a Windows PC is a preview: the picture can be much less smooth than the other direction.
-- No Linux installer yet.
+- Linux installers are 64-bit only (AppImage and `.deb`), and native Wayland input support is still in development.
 - For a folder that already exists, ignore patterns and versioning are not editable yet.
 - Folder sync needs the computers to reach each other, on the same network or directly, or through a relay you run yourself. Sysvia does not host one.
 - The clipboard carries text and images (up to 10 MB each). Files and dragging a file across the desk are not supported. Share a folder instead.
