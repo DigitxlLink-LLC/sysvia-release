@@ -1,0 +1,73 @@
+{
+  "appVersion": "2.3.9",
+  "appCommit": "c7a8e8dd4cfe4df0013623bec3cd756d323292a9",
+  "appWorkingTreeModified": false,
+  "websiteCommit": "49b4b5883d3ff8755a9c5edde4bd020476f480a6",
+  "capturedAt": "2026-11-23T23:46:39.250Z",
+  "theme": "sage",
+  "platform": "macOS",
+  "viewport": {
+    "width": 1280,
+    "height": 860
+  },
+  "deviceScaleFactor": 1.5,
+  "note": "Real app renderer with sample computers, files and engine replies. No sign-in, native services or live multi-computer sessions.",
+  "images": [
+    {
+      "file": "overview.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 92504,
+      "sha256": "6bf0f354b3b84fe7becd694cd0159b5ee63bcb41971b6897c90494a0d9837097"
+    },
+    {
+      "file": "folders.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 89572,
+      "sha256": "d764a4394671b60f45fe3cb98e589430067458142c6e2d3afaf18b91f7095ff8"
+    },
+    {
+      "file": "computers.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 91892,
+      "sha256": "2dd8f0fbb8f639d79c6de79ad286014d1078e23bc16f034d1c69e3783079b44d"
+    },
+    {
+      "file": "input-sharing.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 114382,
+      "sha256": "0c8edd5d8130ebec7b7bf2afeb2045b5fb77876a0e1623df7dd15e5798d9f56e"
+    },
+    {
+      "file": "desk-layout.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 49162,
+      "sha256": "57bdb1e42bd780cdcd71519244a0fc1875883eb2994365db6b470bfdfc694394"
+    },
+    {
+      "file": "clipboard-settings.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 94800,
+      "sha256": "f51160a28e2f50178d6c3e532af649477ef8824a1efa6cdfdde519682eae9937"
+    },
+    {
+      "file": "remote-screen.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 95796,
+      "sha256": "01cd16dac7d1dc526dea1f0270bbd10cea0460fa67a30b4eacfe688b7d653c0a"
+    },
+    {
+      "file": "extended-monitors.webp",
+      "width": 1920,
+      "height": 1290,
+      "bytes": 91516,
+      "sha256": "085186f576af8e4c66f58010f642301054157ba2b8dcf75b4da752187756ec64"
+    }
+  ]
+}

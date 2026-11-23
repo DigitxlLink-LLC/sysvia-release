@@ -181,43 +181,60 @@ Found a security problem? Please tell us first at support@getsysvia.com.
 
 ## Screens
 
+The Sysvia interface in Sage, shown with sample computers and files. Select any screenshot to view it at full size.
+
 <table>
 <tr>
 <td width="50%" valign="top">
 <h3>Overview</h3>
-<img src="media/dashboard.png" alt="Sysvia Overview with shared folders, computers online, transfer activity and recent events." width="100%">
+<a href="media/screenshots/overview.webp"><img src="media/screenshots/overview.webp" alt="Sysvia Overview showing shared folders, computers online, transfer activity and recent events." width="100%"></a>
 <p>Your computers, folders and recent activity in one place.</p>
 </td>
 <td width="50%" valign="top">
 <h3>Folders</h3>
-<img src="media/folders.png" alt="Sysvia Folders with sync status, progress and a detail panel for the selected folder." width="100%">
-<p>See sync progress and the computers sharing each folder.</p>
+<a href="media/screenshots/folders.webp"><img src="media/screenshots/folders.webp" alt="Sysvia Folders showing sync status and details for a selected shared folder." width="100%"></a>
+<p>Check sync progress, file counts and the computers sharing each folder.</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h3>Computers</h3>
-<img src="media/computers.png" alt="Sysvia Computers showing the devices connected to your account." width="100%">
-<p>Find and manage the computers in your workspace.</p>
+<a href="media/screenshots/computers.webp"><img src="media/screenshots/computers.webp" alt="Sysvia Computers showing connected computers and pairing controls." width="100%"></a>
+<p>Manage connected computers and open their screens or desks.</p>
 </td>
 <td width="50%" valign="top">
 <h3>Input sharing</h3>
-<img src="media/desk.png" alt="Sysvia Input sharing page with desk connection controls and session information." width="100%">
-<p>Host a desk, join another computer and check your sessions.</p>
+<a href="media/screenshots/input-sharing.webp"><img src="media/screenshots/input-sharing.webp" alt="Sysvia Input sharing showing host and join controls alongside desk status." width="100%"></a>
+<p>Host a desk or join another computer to share your keyboard and mouse.</p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h3>Desk layout</h3>
-<img src="media/layout.png" alt="Sysvia Desk layout editor for arranging connected computers against screen edges." width="100%">
+<a href="media/screenshots/desk-layout.webp"><img src="media/screenshots/desk-layout.webp" alt="Sysvia Desk layout editor showing the local monitor and two connected computers." width="100%"></a>
+<p>Arrange computers beside the screen edges where your pointer should cross.</p>
 </td>
 <td width="50%" valign="top">
-<h3>Make it match your desk</h3>
-<p>Place each computer beside the screen edge where it sits in real life, then apply the layout.</p>
-<p><a href="https://getsysvia.com/getting-started">Follow the setup guide</a></p>
+<h3>Clipboard settings</h3>
+<a href="media/screenshots/clipboard-settings.webp"><img src="media/screenshots/clipboard-settings.webp" alt="Sysvia Input sharing settings with LAN discovery, clipboard sharing and transport encryption." width="100%"></a>
+<p>Control clipboard sharing and automatic discovery from the input settings.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>Remote screen</h3>
+<a href="media/screenshots/remote-screen.webp"><img src="media/screenshots/remote-screen.webp" alt="Sysvia Remote page showing connected computers and screen sharing controls." width="100%"></a>
+<p>Open another computer’s screen or choose how to share monitors.</p>
+</td>
+<td width="50%" valign="top">
+<h3>Extended monitors</h3>
+<a href="media/screenshots/extended-monitors.webp"><img src="media/screenshots/extended-monitors.webp" alt="Sysvia Remote advanced view with extended monitor controls for connected computers." width="100%"></a>
+<p>Choose a computer to show here or send your desktop to another screen.</p>
 </td>
 </tr>
 </table>
+
+[Screenshot details and capture instructions](media/screenshots/README.md).
 
 ## Install
 
