@@ -13,6 +13,8 @@
 <p align="center">
 <a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.4.0</b></a>
 &nbsp;·&nbsp;
+<a href="#see-it-in-action">See it</a>
+&nbsp;·&nbsp;
 <a href="#new-in-236">New in 2.3.6</a>
 &nbsp;·&nbsp;
 <a href="#install">Install</a>
@@ -55,6 +57,32 @@
 Both computers need the new version; quit Sysvia fully after installing. The full list is in the [2.3.6 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.3.6).
 
 **Since 2.3.0:** *2.3.1* added a sharing bar and extended monitors you can start from either computer. *2.3.2* improved reachability, wake and remote screens. *2.3.3* added the faster Windows screen engine. *2.3.4* improved connections across networks and added five themes. *2.3.5* enabled extended monitors from a Windows PC and made Mac screen encoding quicker.
+
+## See it in action
+
+Five short clips from the walkthrough on [getsysvia.com](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo): a Windows PC, a MacBook and a work laptop on one desk. They show Sysvia's real screens with sample computers and files. The connections and transfers are scripted for the demo, not recorded from live sessions.
+
+**File sharing.** Share a folder from your PC and it is ready on your Mac.
+
+<img src="media/demo-file-sharing.gif" alt="Demo clip: adding a shared folder in Sysvia on a Windows PC. Sample data." width="100%">
+
+**Keyboard and mouse.** Move past the edge of the screen and keep typing on the next computer.
+
+<img src="media/demo-keyboard-mouse.gif" alt="Demo clip: the pointer moving from a Windows monitor to a MacBook beside it. Sample data." width="100%">
+
+**Clipboard.** Copy text, images or a screenshot, then paste on the other computer.
+
+<img src="media/demo-clipboard.gif" alt="Demo clip: a screenshot copied on a Windows PC and pasted on a MacBook. Sample data." width="100%">
+
+**Remote screen.** Control your PC from your Mac.
+
+<img src="media/demo-remote-screen.gif" alt="Demo clip: a Mac showing and controlling a Windows PC's screen. Sample data." width="100%">
+
+**Extended displays.** Spread your Mac across your PC's monitors.
+
+<img src="media/demo-extended-displays.gif" alt="Demo clip: a Mac's screen extended onto a Windows PC's monitors. Sample data." width="100%">
+
+[Watch the full 60-second walkthrough](https://getsysvia.com/?utm_source=github&utm_medium=readme&utm_campaign=release-repo) on the website.
 
 ## What it does
 
