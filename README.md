@@ -8,10 +8,15 @@
 <img alt="Peer to peer, no cloud" src="https://img.shields.io/badge/architecture-peer--to--peer-1f2937?style=flat-square">
 <img alt="TLS encrypted" src="https://img.shields.io/badge/transport-TLS-1f2937?style=flat-square">
 <img alt="Signed and notarized on macOS" src="https://img.shields.io/badge/macOS-signed%20%26%20notarized-1f2937?style=flat-square">
+<a href="https://discord.gg/CjT8cNeh5h"><img alt="Join the Sysvia Discord" src="https://img.shields.io/badge/community-Discord-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white"></a>
 </p>
 
 <p align="center">
-<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia</b></a>
+<a href="https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest"><b>Download Sysvia 2.4.1</b></a>
+&nbsp;·&nbsp;
+<a href="#new-in-241">New in 2.4.1</a>
+&nbsp;·&nbsp;
+<a href="https://discord.gg/CjT8cNeh5h">Join Discord</a>
 &nbsp;·&nbsp;
 <a href="#see-it-in-action">See it</a>
 &nbsp;·&nbsp;
@@ -33,6 +38,30 @@
 &nbsp;·&nbsp;
 <a href="#reference">Reference</a>
 </p>
+
+## New in 2.4.1
+
+<p align="center">
+<img src="media/release-2.4.1-banner.jpg" alt="Sysvia 2.4.1: copy here, paste there. Available for Windows, macOS and Linux; file copy and paste works between Windows and Mac, and between Windows computers." width="100%">
+</p>
+
+**Copy files and folders on one computer and paste them on another.** Copy in Windows Explorer with **Ctrl+C** and paste in Mac Finder with **Cmd+V**, or copy on the Mac and paste on Windows. Right-click Copy and Paste work too, as does copying between two Windows computers. Folders arrive with everything inside them.
+
+Files usually move when you paste, over a connection of their own so the mouse and keyboard stay responsive. Keep the computer you copied on connected until the paste finishes. A Mac accepts up to **16 GB at a time**; Finder may wait while a large file arrives. A file changed since it was copied needs to be copied again. Turning **Clipboard sharing** off also turns file sharing off.
+
+**Update both computers to 2.4.1 and quit Sysvia fully after installing.** Text, pictures and screenshots still work as before. File copy and paste is not available on Linux yet, and dragging a file between computers is not supported. Use folder sync for those transfers.
+
+The [2.4.1 release notes](https://github.com/DigitxlLink-LLC/sysvia-release/releases/tag/v2.4.1) cover the full change. Installers are available for Windows, Apple silicon and Intel Macs, and 64-bit Linux (AppImage and Debian package).
+
+**Also added since 2.3.5:**
+
+- **2.4.0:** faster first opening of extended monitors, monitor windows that stay above other apps, a **Show here** button when screens are switched away, and **Ctrl+Alt+E** to send this computer's desktop to connected computers. Each computer can choose whether to ask first.
+- **2.3.9:** clearer sound from another computer, with fixes for bursts of static and fewer interruptions across different networks.
+- **2.3.8:** a shortcut of your choice for each computer, quick switching between connected desktops, and sound sharing from Macs running macOS 13 or later. Allowed sound starts with the remote screen, and the Sound button remembers your choice.
+- **2.3.7:** cleaner screen-session disconnects and clearer handling when a computer is already lending its monitors.
+- **2.3.6:** **Ctrl+Alt+3** to switch lent monitors between desktops, improved shortcut recording and confirmations, more careful pairing, and the [Sysvia Discord](https://discord.gg/CjT8cNeh5h).
+
+See [all releases](https://github.com/DigitxlLink-LLC/sysvia-release/releases) for earlier changes.
 
 ## See it in action
 
@@ -119,65 +148,43 @@ Five clips from the website walkthrough, with sample computers and files. Connec
 
 ## What it does
 
-Sysvia keeps folders in sync between your computers and lets one keyboard and mouse control several of them. Nothing goes through a cloud service. Computers find each other on your network and talk directly.
+Sysvia keeps folders in sync between your computers and lets one keyboard and mouse control several of them. Computers connect directly whenever possible, without storing your files in a cloud drive. For computers on different networks, Sysvia can use its relay when a direct connection is unavailable.
 
 | | |
 | --- | --- |
 | **Folder sync** | Continuous, peer to peer, on Sysvia's own engine. Receive-only folders, a 7-day undo for removed files, interrupted transfers that resume, and renames that move at once. |
 | **Workspaces** | Group your computers the way you use them, like a home office or a studio, and choose which of them show notifications. |
 | **Input sharing** | One keyboard and mouse across several computers, set up as a desk. Push the pointer off a screen edge and it lands on the next machine. |
-| **Remote screen** | See and use another computer's screen from yours, once the person at it allows that. |
-| **Extended monitors** | Use another computer's monitors as extra screens on this one, with no cable. |
-| **Clipboard** | Copy text or an image on one computer, paste it on another. Screenshots and "Copy image" work between Windows and Mac. |
+| **Remote screen and sound** | See and use another computer's screen from yours, once the person at it allows that. Listen to its sound when separately allowed; a Mac sharing sound needs macOS 13 or later. |
+| **Extended monitors** | Use another computer's monitors as extra screens on this one, with no cable. Set a shortcut for each computer and switch between connected desktops without reconnecting. |
+| **Clipboard** | Copy text, pictures or screenshots on one computer and paste on another. Files and folders also paste between Windows and Mac, and between Windows computers, when linked on the same network. |
 | **Shortcuts and game mode** | Keys that work from anywhere on the computer, and a game mode that stops the keyboard and mouse from leaving it while you play. |
 | **Notifications** | Desktop alerts when a computer connects, files arrive, something fails, or an update is ready. |
-| **Connect from anywhere** | Optional. Computers on different networks find each other through your account, which only passes short signed notes. Off until you turn it on. |
-| **Private by design** | Your files and clipboard never pass through a server of ours. No cloud storage. If two computers cannot reach each other, they can use a relay you run yourself, and it cannot read what it carries. Traffic is TLS and tied to device identities. See [Security](#security). |
+| **Connect from anywhere** | Let computers on different networks find each other through your account. See [Connect from anywhere](#connect-from-anywhere). |
+| **Private by design** | Encrypted connections between your computers, with no cloud file storage. Screen viewing, control and sound sharing each need permission. See [Security](#security). |
 
 ## How it works
 
-One app drives two background services on each computer. Folder sync and the desk are separate on purpose: you can use either without the other.
+Install Sysvia on each computer and sign in. Your computers can find each other on the same network. Computers on another account wait for you to accept them before connecting.
 
-```mermaid
-flowchart LR
-    subgraph A["Computer A"]
-        direction TB
-        UIA["Sysvia app"]
-        SYA["Sysvia Sync<br/>folder engine"]
-        DKA["sysviad<br/>desk daemon"]
-        UIA --> SYA
-        UIA --> DKA
-    end
-    subgraph B["Computer B"]
-        direction TB
-        UIB["Sysvia app"]
-        SYB["Sysvia Sync<br/>folder engine"]
-        DKB["sysviad<br/>desk daemon"]
-        UIB --> SYB
-        UIB --> DKB
-    end
-    SYA <-->|"folder data · TLS · port 22000"| SYB
-    DKA <-->|"keyboard, mouse, clipboard · TLS · port 24810"| DKB
-```
+Choose which folders to share, then set up a desk if you also want one keyboard and mouse across your computers. Folder sync and input sharing can be used independently. Remote screens and extended monitors have their own permission controls.
 
-- **Discovery** is local. Folder discovery uses UDP 21037, the desk uses UDP 24812 and mDNS. Nothing is announced beyond your network.
-- **Identity.** Every computer has its own Device ID and certificate. Pair two computers once and they recognize each other from then on.
-- **Local control.** The app talks to its own services over `127.0.0.1` only. None of those ports are meant to be reachable from outside. See [Network ports](#reference).
+### Connect from anywhere
+
+To reach computers on different networks, sign in to the same account and open **Settings, General, Connect from anywhere** on both computers. Turn on **Use my Sysvia account to introduce my computers** and keep Sysvia running on both. They try a direct connection first and can use Sysvia's relay when needed. Relay availability and usage limits depend on your account; see [getsysvia.com](https://getsysvia.com) for current license details.
+
+Keyboard and mouse sharing across screen edges still needs the same local network. For a computer elsewhere, open its remote screen instead.
 
 ## Security
 
-Your files, clipboard and keystrokes stay between your own computers. On top of that, Sysvia is hardened in several ways:
+Connections between your computers are encrypted. Your files stay on your computers rather than in a cloud drive.
 
-| | |
-| --- | --- |
-| **Encrypted, and tied to identities** | Every computer has its own Device ID and certificate. Traffic between computers is TLS, and a computer is recognized by its certificate, never by a name or an address. |
-| **Your keyboard and mouse answer only to computers you chose** | The desk accepts a computer if you added it or connected to it yourself. Anything else on the network is turned away before it learns anything about your screens, and it cannot tie up the desk by connecting and saying nothing. |
-| **Background services take orders only from the app** | The ports Sysvia uses on your own computer need a secret that only the app has: the desk service's is made again every time Sysvia starts, the file sync engine's once per computer. Other programs on the same computer cannot drive them. |
-| **Deleting stays inside the folder** | Removing something through a link in a shared folder can no longer reach files outside it, and on Windows the administrator delete no longer writes a script file that could be swapped. |
-| **Screens are off until you allow them** | Remote screen and extended monitors do nothing until the person at the computer turns them on. They then choose which computers may look or control, can be asked each time, and a bar shows whenever someone is looking. |
-| **Local by default** | Finding computers happens on your network. The account is only used if you turn on [Connect from anywhere](#220), and it never sees file names, contents, keystrokes or screens. |
+- **You choose which computers connect.** Computers outside your account wait for you to accept them.
+- **You allow screen access.** Choose which computers may view or control a screen. A sharing bar shows when someone is looking or listening.
+- **Sound needs its own permission.** Listening starts only after the sharing computer allows it, and the viewer can turn it off with the Sound button.
+- **You can take input back.** Press **Ctrl+Alt+Esc** (Mac: **Control+Option+Esc**) to return the keyboard and mouse to this computer.
 
-Found a security problem? Please tell us first at support@getsysvia.com.
+Found a security problem? Please tell us privately at [support@getsysvia.com](mailto:support@getsysvia.com).
 
 ## Screens
 
@@ -238,7 +245,7 @@ The Sysvia interface in Sage, shown with sample computers and files. Select any 
 
 ## Install
 
-Download the installer for your computer from the [latest release](https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest).
+Download the installer for your computer from the [latest release, Sysvia 2.4.1](https://github.com/DigitxlLink-LLC/sysvia-release/releases/latest). Create an account at [getsysvia.com](https://getsysvia.com) and sign in to the app; see the website for current license options.
 
 | Computer | File |
 | --- | --- |
@@ -250,7 +257,7 @@ Download the installer for your computer from the [latest release](https://githu
 
 In the file names, `<version>` is the number of the release you download. The [Releases page](https://github.com/DigitxlLink-LLC/sysvia-release/releases) has the release notes for every version.
 
-**Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. It also adds Windows Firewall allow rules for Sysvia's two background services. Uninstalling removes the rules and leaves your folders and settings alone.
+**Windows.** Run the installer. It installs per machine, asks for a directory (default `C:\Program Files\Sysvia`), and adds Start menu and desktop shortcuts. Allow the installer to set up the network access Sysvia needs.
 
 **macOS.** Open the `.dmg` and drag Sysvia into Applications. The app is signed and notarized by Apple. On first launch macOS asks for Local Network access, and keyboard and mouse sharing needs the permissions listed under [macOS permissions](#macos-permissions). Not sure which Mac you have? Apple menu, then About This Mac: "Chip" says Apple M1 or similar, "Processor" says Intel.
 
@@ -263,7 +270,7 @@ The app checks this repository for updates a few seconds after launch, every ten
 
 <br>
 
-The SHA256 of each installer is in [SHA256SUMS](SHA256SUMS). To check your copy:
+The SHA256 of each 2.4.1 installer and macOS update ZIP is in [SHA256SUMS](SHA256SUMS), followed by checksums for earlier downloads. To check your copy:
 
 ```powershell
 # Windows
@@ -315,12 +322,12 @@ Clicking an alert brings Sysvia forward and opens the page it was about: Compute
 
 ## Updating
 
-**From 2.0.0 or later.** Just update. The app offers it, or download it above. Your computers stay paired and your folders stay as they are. Update every computer on a desk: keyboard and mouse sharing is stricter in 2.2.0, so if a computer you expect is turned away at first, open **Computers** on the host and switch **Share keyboard and mouse** on for it.
+**From 2.0.0 or later.** Use the update offered by the app, or download the latest installer above. Your computers stay paired and your folders stay as they are. Update every computer to **2.4.1**, then quit Sysvia fully and reopen it so every computer is running the new version. Cross-platform file copy and paste needs the new version on both ends.
 
 **From 1.x.** Version 2.0 replaced the file sync engine (1.x used Syncthing), and 2.0 computers cannot sync with 1.x computers. So update all of them, then set them up again:
 
-1. Install 2.2.0 on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
-2. Sysvia 2.2.0 does not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
+1. Install the latest version on every computer. Until every computer is updated, the ones that are not will stop syncing with the ones that are.
+2. Current Sysvia versions do not read your old Syncthing setup. Your files are not touched, but the folders are not added for you. On each computer, add each folder again and choose the folder you already have on disk.
 3. Open **Computers** on each computer and pair them. Computers have new IDs in 2.0, so the old pairings do not carry over.
 4. Share the folders between them. If both sides already hold the same files, nothing is sent again. Sysvia compares them and carries on.
 
@@ -350,7 +357,7 @@ Install and open Sysvia on each computer. Then:
 > [!NOTE]
 > Both computers must be open and on the same subnet. A desktop on Ethernet and a laptop on a different Wi-Fi range will not see each other.
 
-Keyboard sharing is optional, and leaving it off does not stop folder sync. Folders can also sync beyond your local network, if the computers can reach each other directly, for example through a forwarded port or a VPN. The desk cannot. For folders that cannot reach each other directly, Sysvia does not host a relay, but you can run your own (see 2.1.2 under [What's new](#whats-new)).
+Keyboard sharing is optional, and leaving it off does not stop folder sync. For folders and remote screens across different networks, see [Connect from anywhere](#connect-from-anywhere).
 
 ## Shortcuts and game mode
 
@@ -364,7 +371,9 @@ These work from anywhere on the computer, even while a game or another app is in
 | `Ctrl+Alt+D` | Open remote screen to another of your computers. On a Mac: `Control+Option+D`. |
 | `Ctrl+Alt+1` | While another computer's monitors are added to yours, flip the keyboard and mouse between this computer and that one. On a Mac: `Control+Option+1`. |
 | `Ctrl+Alt+3` | Switch lent monitors between this computer and the other computer’s desktop. |
+| `Ctrl+Alt+E` | Send this computer's desktop to connected computers. Each receiving computer asks first unless you allowed it without asking. |
 | `Ctrl+Alt+S` | Bring the Sysvia window to the front. |
+| Your choice | **Show [computer] on these monitors**, one shortcut for each other computer. The first press connects, another computer's shortcut switches to it, and pressing the current computer's shortcut returns to this desktop. |
 
 Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 
@@ -383,6 +392,7 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 - **Accessibility** must be on for Sysvia and for `sysviad`. Restart after granting it.
 - **Screen Recording** must be on for `sysviad` on any Mac whose screen you view from another computer.
 - For remote screen macOS also asks about **Screen Recording** and **Accessibility** the first time someone looks at, or controls, this Mac. Allow the entries named Sysvia. Only the person at the Mac can do this.
+- Sharing a Mac's sound needs **macOS 13 or later** and **Screen Recording** permission, plus permission for the listening computer in Sysvia.
 - **Notifications** should be allowed if you want [desktop alerts](#notifications).
 
 </details>
@@ -392,33 +402,22 @@ Everything except `Ctrl+Alt+Esc` can be changed under **Settings, Shortcuts**.
 - Using a Mac as an extra monitor for a Windows PC is a preview: the picture can be much less smooth than the other direction.
 - Linux installers are 64-bit only (AppImage and `.deb`), and native Wayland input support is still in development.
 - For a folder that already exists, ignore patterns and versioning are not editable yet.
-- Folder sync needs the computers to reach each other, on the same network or directly, or through a relay you run yourself. Sysvia does not host one.
-- The clipboard carries text and images (up to 10 MB each). Files and dragging a file across the desk are not supported. Share a folder instead.
+- Folder sync needs both computers connected, either directly or through Sysvia's relay. Relay usage is subject to your account's allowance.
+- The clipboard carries text and images (up to 10 MB each). Files and folders can be pasted between Windows and Mac, and between Windows computers, on the same network with both computers on 2.4.1. Keep the source computer connected until the paste finishes. A Mac accepts up to 16 GB at a time. Linux file copy and paste and dragging files between computers are not supported yet; use folder sync instead.
 - Keyboard and mouse do not cross subnets, a VPN or the internet.
-- Remote screen and extended monitors need the two computers to reach each other, on one network or with [Connect from anywhere](#220) on both. Sysvia does not host a relay, so two networks that do not allow a direct path cannot use them.
+- Remote screen and extended monitors need the computers to connect on one network or with [Connect from anywhere](#connect-from-anywhere) on both. The connection and any relay allowance affect the available quality and speed.
 - A Windows PC can lend its monitors only after the virtual display driver is installed (Windows 11, 64-bit).
 - Game mode keeps the cursor on one monitor on Windows only. On a Mac it only stops the pointer crossing to another computer.
-- The first desk connection does not ask you to compare fingerprints. The desk session (TLS, tied to the daemon's Ed25519 key) is encrypted and accepts only computers you added or connected to, but the window does not show that key for approval yet. Folder transfers use device certificates.
+
+## Community and support
+
+**[Join the Sysvia Discord](https://discord.gg/CjT8cNeh5h)** to ask questions, report problems, suggest features and share your setup. Release announcements are posted there too.
+
+When reporting a problem, include your Sysvia version, the operating systems on both computers, what you expected and what happened. You can find the app version under **Settings, Updates**.
+
+For private support or security reports, email [support@getsysvia.com](mailto:support@getsysvia.com).
 
 ## Reference
-
-<details>
-<summary>Network ports</summary>
-
-<br>
-
-| Port | Used for | Notes |
-| --- | --- | --- |
-| 22000 | Folder data | |
-| 21037 UDP | Folder discovery on the LAN | |
-| 8384 | Folder sync local API | `127.0.0.1` only. Needs a key only the app has. Do not publish it. |
-| 24810 | Desk session | Accepts only computers you added or connected to. |
-| 24811 | Window control | `127.0.0.1` only. Needs a secret only the app has. |
-| 24812 UDP | Desk discovery | |
-| 24813 | Screen frames for the viewer | `127.0.0.1` only. Needs a key only the viewer has. |
-| 5353 UDP | mDNS, `_sysvia._tcp` | |
-
-</details>
 
 <details>
 <summary>Files on disk</summary>
